@@ -1,14 +1,18 @@
 import { localitiesByCounty, within60km } from '@/lib/geo';
 import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 
-/**
- * Secțiune GEO SEO — vizibilă pentru Google, utilă pentru utilizatori.
- * Structurată cu H3/H4 pentru crawlere, cu text natural relevant.
- */
+const countyAccent: Record<string, string> = {
+  București:  'Acces rapid · 40 km · Autostradă A2',
+  Ilfov:      'Județ limitrof · 28–58 km',
+  Giurgiu:    'Județ local · 2–40 km',
+  Dâmbovița:  'Nord-vest · 35–65 km',
+  Argeș:      'Vest · ~65 km',
+  Teleorman:  'Sud · 22–58 km',
+};
+
 export default function GeoContent() {
-  const counties = Object.keys(localitiesByCounty).filter(
-    (c) => c !== 'București'
-  );
+  const counties = Object.keys(localitiesByCounty).filter((c) => c !== 'București');
 
   return (
     <section
@@ -17,6 +21,7 @@ export default function GeoContent() {
       aria-label="Zona de acoperire Măgura Events"
     >
       <div className="container-luxury">
+
         {/* Heading */}
         <div className="text-center mb-14">
           <p className="label-gold mb-4">✦ Zona de acoperire ✦</p>
@@ -25,28 +30,23 @@ export default function GeoContent() {
             <span className="text-gold-gradient italic">toată regiunea</span>
           </h2>
           <div className="gold-line" />
-          <p
-            className="font-sans text-cream-500 max-w-2xl mx-auto mt-6"
-            style={{ lineHeight: 1.9 }}
-          >
-            Măgura Events este localizat în <strong className="text-cream-300">Sat Măgura, Comuna Buturugeni, Județul Giurgiu</strong> — la doar{' '}
-            <strong className="text-cream-300">40 km de București</strong>, accesibil rapid din toată zona de sud a țării. Deservim cupluri și familii din București, Ilfov, Giurgiu, Dâmbovița, Argeș și județele limitrofe.
+          <p className="font-sans text-cream-500 max-w-2xl mx-auto mt-6" style={{ lineHeight: 1.9 }}>
+            Localizați în <strong className="text-cream-300">Sat Măgura, Buturugeni, Giurgiu</strong> —
+            la doar <strong className="text-cream-300">40 km de București</strong>. Deservim cupluri și
+            familii din București, Ilfov, Giurgiu, Dâmbovița, Argeș și județele limitrofe.
           </p>
         </div>
 
-        {/* Distance highlights */}
+        {/* Distance pills */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
           {[
-            { city: 'București',     km: '~40 km',  note: 'Autostradă A2' },
-            { city: 'Giurgiu',       km: '~27 km',  note: 'DN5' },
-            { city: 'Videle',        km: '~35 km',  note: 'DJ' },
-            { city: 'Răcari',        km: '~35 km',  note: 'DN' },
-            { city: 'Mihăilești',    km: '~10 km',  note: 'DN61' },
+            { city: 'București',  km: '~40 km',  note: 'A2' },
+            { city: 'Giurgiu',    km: '~27 km',  note: 'DN5' },
+            { city: 'Videle',     km: '~35 km',  note: 'DJ' },
+            { city: 'Răcari',     km: '~35 km',  note: 'DN' },
+            { city: 'Mihăilești', km: '~10 km',  note: 'DN61' },
           ].map((item) => (
-            <div
-              key={item.city}
-              className="card-luxury p-5 text-center"
-            >
+            <div key={item.city} className="card-luxury p-5 text-center">
               <p className="font-serif text-xl text-gold-600 mb-1">{item.km}</p>
               <p className="font-sans text-xs text-cream-200 font-medium mb-1">{item.city}</p>
               <p className="font-sans text-[0.6rem] text-cream-600 tracking-wider">{item.note}</p>
@@ -54,23 +54,32 @@ export default function GeoContent() {
           ))}
         </div>
 
-        {/* Counties grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* București special */}
-          <div className="card-luxury p-6 lg:col-span-1">
-            <h3 className="font-serif text-xl text-cream-100 mb-1">
-              Salon evenimente <span className="text-gold-600">București</span>
-            </h3>
-            <p className="font-sans text-xs text-gold-600/70 tracking-widest uppercase mb-4">
-              40 km · Acces rapid A2
+        {/* County cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {/* București — card special */}
+          <div className="relative card-luxury p-7 border-l-2 border-gold-600/50">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-9 h-9 border border-gold-600/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <MapPin size={15} className="text-gold-600" />
+              </div>
+              <div>
+                <h3 className="font-serif text-lg text-cream-100 mb-0.5">
+                  Evenimente <span className="text-gold-600">București</span>
+                </h3>
+                <p className="font-sans text-[0.62rem] text-gold-600/60 tracking-widest uppercase">
+                  {countyAccent['București']}
+                </p>
+              </div>
+            </div>
+            <p className="font-sans text-xs text-cream-500 mb-5" style={{ lineHeight: 1.8 }}>
+              Locație exclusivistă la 40 de minute de capitală — cadrul perfect pentru cuplurile
+              din București care vor o nuntă sau botez departe de agitația orașului.
             </p>
-            <p className="font-sans text-xs text-cream-500 mb-4" style={{ lineHeight: 1.75 }}>
-              Organizăm nunți, botezuri și majorate pentru familii din București care doresc o locație premium, exclusivistă, departe de agitația orașului dar la doar 40 de minute.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {['nuntă București', 'botez București', 'majorat București', 'eveniment corporate București'].map((kw) => (
-                <span key={kw} className="text-[0.55rem] font-sans px-2 py-1 border border-gold-600/15 text-cream-600 tracking-wider">
-                  {kw}
+            <div className="flex flex-wrap gap-1.5">
+              {['Nuntă', 'Botez', 'Majorat', 'Corporate'].map((kw) => (
+                <span key={kw} className="text-[0.6rem] font-sans px-3 py-1.5 bg-gold-600/5 border border-gold-600/20 text-gold-600/80 tracking-wide">
+                  {kw} București
                 </span>
               ))}
             </div>
@@ -80,66 +89,66 @@ export default function GeoContent() {
           {counties.map((county) => {
             const locs = localitiesByCounty[county].filter((l) => l.distKm <= 65);
             if (locs.length === 0) return null;
-            const maxDist = Math.max(...locs.map((l) => l.distKm));
+            const sorted    = locs.sort((a, b) => a.distKm - b.distKm);
+            const top       = sorted.slice(0, 6);
+            const remaining = sorted.slice(6);
+
             return (
-              <div key={county} className="card-luxury p-6">
-                <h3 className="font-serif text-xl text-cream-100 mb-1">
-                  Salon evenimente{' '}
-                  <span className="text-gold-600">{county}</span>
-                </h3>
-                <p className="font-sans text-xs text-gold-600/70 tracking-widest uppercase mb-4">
-                  {locs.length} localități acoperite · până la {maxDist} km
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {locs
-                    .sort((a, b) => a.distKm - b.distKm)
-                    .slice(0, 16)
-                    .map((loc) => (
-                      <span
-                        key={loc.name}
-                        className="text-[0.58rem] font-sans px-2 py-1 border border-gold-600/10 text-cream-600 hover:text-cream-300 hover:border-gold-600/30 transition-colors duration-200"
-                        title={`${loc.type} — ${loc.distKm} km`}
-                      >
-                        {loc.name}
-                      </span>
-                    ))}
-                  {locs.length > 16 && (
-                    <span className="text-[0.55rem] font-sans text-cream-700 self-center">
-                      +{locs.length - 16} localități
-                    </span>
-                  )}
+              <div key={county} className="relative card-luxury p-7 border-l-2 border-gold-600/20">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-9 h-9 border border-gold-600/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <MapPin size={15} className="text-gold-600/70" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-cream-100 mb-0.5">
+                      Evenimente <span className="text-gold-600">{county}</span>
+                    </h3>
+                    <p className="font-sans text-[0.62rem] text-gold-600/60 tracking-widest uppercase">
+                      {countyAccent[county] ?? `${locs.length} localități · până la ${Math.max(...locs.map((l) => l.distKm))} km`}
+                    </p>
+                  </div>
                 </div>
+
+                {/* Top cities */}
+                <div className="space-y-1.5 mb-4">
+                  {top.map((loc) => (
+                    <div key={loc.name} className="flex items-center justify-between">
+                      <span className="font-sans text-xs text-cream-400">{loc.name}</span>
+                      <span className="font-sans text-[0.58rem] text-cream-700 tabular-nums">{loc.distKm} km</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Remaining — vizibil pentru SEO, discret vizual */}
+                {remaining.length > 0 && (
+                  <p className="font-sans text-[0.58rem] text-cream-700" style={{ lineHeight: 1.7 }}>
+                    + {remaining.map((l) => l.name).join(', ')}
+                  </p>
+                )}
               </div>
             );
           })}
         </div>
 
-        {/* SEO paragraph — natural text cu toate localitățile */}
-        <div className="mt-14 card-luxury p-8">
-          <h3 className="font-serif text-xl text-cream-200 mb-4">
+        {/* SEO paragraph */}
+        <div className="mt-12 p-8 border border-gold-600/8" style={{ background: 'rgba(201,168,76,0.02)' }}>
+          <h3 className="font-serif text-base text-cream-300 mb-3">
             Locație premium accesibilă din toată zona de sud a României
           </h3>
-          <p className="font-sans text-cream-500 text-sm mb-4" style={{ lineHeight: 1.9 }}>
-            Dacă ești în căutarea unui <strong className="text-cream-300">salon de nunți</strong>, a unei{' '}
-            <strong className="text-cream-300">locații pentru botez</strong> sau a unui{' '}
-            <strong className="text-cream-300">salon de majorat</strong> premium în apropierea Bucureștiului,
-            Măgura Events este alegerea perfectă. Suntem situați în{' '}
-            <strong className="text-cream-300">Sat Măgura, Buturugeni, Giurgiu</strong> și organizăm
-            evenimente pentru clienți din:
+          <p className="font-sans text-cream-600 text-xs mb-3" style={{ lineHeight: 2 }}>
+            Căutați un <strong className="text-cream-500">salon de nunți</strong>, o{' '}
+            <strong className="text-cream-500">locație pentru botez</strong> sau un{' '}
+            <strong className="text-cream-500">salon de majorat</strong> premium lângă București?
+            Suntem în <strong className="text-cream-500">Sat Măgura, Buturugeni, Giurgiu</strong> și
+            organizăm evenimente pentru clienți din:
           </p>
-          <div
-            className="font-sans text-xs text-cream-600"
-            style={{ lineHeight: 2, columns: '2 200px', columnGap: '2rem' }}
-          >
+          <p className="font-sans text-[0.6rem] text-cream-700" style={{ lineHeight: 2.2 }}>
             {within60km
               .sort((a, b) => a.distKm - b.distKm)
-              .map((loc) => (
-                <span key={`${loc.name}-${loc.county}`} className="inline-block mr-1">
-                  {loc.name} ({loc.county}),{' '}
-                </span>
-              ))}
-            și din toate localitățile și județele limitrofe.
-          </div>
+              .map((loc) => `${loc.name} (${loc.county})`)
+              .join(' · ')}
+            {' '}și din toate localitățile limitrofe.
+          </p>
         </div>
 
         {/* CTA */}
