@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -244,8 +244,8 @@ export default function Navigation() {
               </Link>
               <p className="text-center text-xs text-cream-600">
                 Tel:{' '}
-                <a href="tel:+40XXXXXXXXX" className="text-gold-600 hover:underline">
-                  +40 XXX XXX XXX
+                <a href="tel:+40765736177" className="text-gold-600 hover:underline">
+                  +40 765 736 177
                 </a>
               </p>
             </div>

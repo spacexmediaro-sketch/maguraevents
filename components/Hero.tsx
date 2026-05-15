@@ -206,9 +206,9 @@ export default function Hero() {
             className="font-serif font-light text-cream-100 mb-6"
             style={{ fontSize: 'clamp(2.8rem, 7vw, 7rem)', lineHeight: 1.05, letterSpacing: '0.04em', textShadow: '0 2px 40px rgba(0,0,0,0.5)' }}
           >
-            Unde visele{' '}
+            Unde visurile{' '}
             <span className="block italic text-gold-gradient">
-              devin amintiri
+              devin realitate
             </span>
           </motion.h1>
 

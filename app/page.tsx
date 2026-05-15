@@ -6,31 +6,45 @@ import MenuSection from '@/components/MenuSection';
 import Gallery from '@/components/Gallery';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
+import GeoContent from '@/components/GeoContent';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { MapPin, Phone, Clock, Facebook, Instagram } from 'lucide-react';
 import { IconTikTok } from '@/components/Icons';
+import JsonLd from '@/components/JsonLd';
+import { eventVenueSchema } from '@/lib/schemas';
 
 export const metadata: Metadata = {
-  title: 'Măgura Events — Saloane Premium pentru Evenimente Memorabile în Giurgiu',
+  title: 'Măgura Events — Salon Nunți și Evenimente Premium | Buturugeni, Giurgiu',
   description:
-    'Măgura Events — două saloane de excepție pentru nunți, botezuri, majorate și corporate în județul Giurgiu. Salon Crystal (250 pers.) și Salon Royal (450 pers.). Meniuri proprii, decor premium, organizare completă.',
+    'Măgura Events — saloane premium pentru nunți, botezuri, majorate și corporate în Buturugeni, Giurgiu, la 40 km de București. Salon Crystal (250 pers.) și Salon Royal (450 pers.). Organizare completă, meniuri rafinate.',
   keywords: [
-    'salon evenimente Giurgiu',
     'salon nunți Giurgiu',
+    'salon evenimente Giurgiu',
     'salon botez Giurgiu',
     'Măgura Events',
-    'sală nuntă Giurgiu',
-    'locație evenimente premium',
+    'locație nuntă lângă București',
+    'salon nuntă Buturugeni',
     'restaurant nuntă Giurgiu',
-    'salon majorate',
+    'salon majorat Giurgiu',
+    'salon nuntă Ilfov',
+    'nuntă aproape București',
+    'salon eventos lux',
   ],
   alternates: { canonical: 'https://magura-events.ro' },
+  other: {
+    'geo.region':    'RO-GR',
+    'geo.placename': 'Buturugeni, Giurgiu, România',
+    'geo.position':  '44.13;25.87',
+    'ICBM':          '44.13, 25.87',
+  },
 };
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={eventVenueSchema()} />
+
       {/* Hero cinematic */}
       <Hero />
 
@@ -60,6 +74,9 @@ export default function HomePage() {
 
       {/* Map + Contact teaser */}
       <MapSection />
+
+      {/* GEO SEO — zona de acoperire */}
+      <GeoContent />
     </>
   );
 }
@@ -128,7 +145,7 @@ function CtaBanner() {
             <Link href="/contact" className="btn-gold">
               <span>Solicită Ofertă Gratuită</span>
             </Link>
-            <a href="tel:+40XXXXXXXXX" className="btn-outline-gold">
+            <a href="tel:+40765736177" className="btn-outline-gold">
               <span>Sună Acum</span>
             </a>
           </div>
@@ -168,8 +185,8 @@ function MapSection() {
                 </div>
                 <div>
                   <p className="font-sans text-xs tracking-widest uppercase text-gold-600/70 mb-1">Telefon</p>
-                  <a href="tel:+40XXXXXXXXX" className="font-sans text-cream-300 text-sm hover:text-gold-600 transition-colors">
-                    +40 XXX XXX XXX
+                  <a href="tel:+40765736177" className="font-sans text-cream-300 text-sm hover:text-gold-600 transition-colors">
+                    +40 765 736 177
                   </a>
                 </div>
               </div>

@@ -99,10 +99,10 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="space-y-3">
-              <a href="tel:+40XXXXXXXXX" className="flex items-center gap-3 group">
+              <a href="tel:+40765736177" className="flex items-center gap-3 group">
                 <Phone size={12} className="text-gold-600/60 group-hover:text-gold-600 transition-colors" />
                 <span className="font-sans text-xs text-cream-500 group-hover:text-cream-300 transition-colors">
-                  +40 XXX XXX XXX
+                  +40 765 736 177
                 </span>
               </a>
               <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 group">

@@ -55,10 +55,10 @@ export default function ContactPage() {
                       <div>
                         <p className="font-sans text-xs tracking-widest uppercase text-gold-600/60 mb-1">Telefon</p>
                         <a
-                          href="tel:+40XXXXXXXXX"
+                          href="tel:+40765736177"
                           className="font-serif text-xl text-cream-200 hover:text-gold-600 transition-colors"
                         >
-                          +40 XXX XXX XXX
+                          +40 765 736 177
                         </a>
                         <p className="font-sans text-xs text-cream-600 mt-1">Disponibil L-D 09:00 – 20:00</p>
                       </div>

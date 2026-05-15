@@ -91,7 +91,7 @@ export default function LitigiiPage() {
                     contact@magura-events.ro
                   </a>
                 </p>
-                <p className="text-xs text-cream-500">Telefon: +40 XXX XXX XXX</p>
+                <p className="text-xs text-cream-500">Telefon: +40 765 736 177</p>
               </div>
             </section>
           </div>

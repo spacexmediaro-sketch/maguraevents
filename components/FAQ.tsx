@@ -130,7 +130,7 @@ export default function FAQ() {
             Nu ați găsit răspunsul dorit? Suntem la dispoziția dumneavoastră.
           </p>
           <a
-            href="tel:+40XXXXXXXXX"
+            href="tel:+40765736177"
             className="btn-outline-gold"
           >
             <span>Contactați-ne direct</span>
