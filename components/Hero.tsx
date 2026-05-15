@@ -22,6 +22,10 @@ const heroImages = [
     src: '/images/hero/hero-detaliu-masa.webp',
     alt: 'Detaliu masă premium — farfurii aurii, pahare de cristal și aranjament floral',
   },
+  {
+    src: '/images/galerie/nunta-cuplu-parc.webp',
+    alt: 'Cuplu de miri în parcul Măgura Events Giurgiu — toamnă cu frunze colorate lângă lac',
+  },
 ];
 
 export default function Hero() {
