@@ -3,6 +3,16 @@ import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { IconDove } from '@/components/Icons';
+import EventGallery from '@/components/EventGallery';
+
+const photos = [
+  { src: '/images/botezuri/decor-botez-baietel-ursulet-baloane-monstera-exterior-pergola-giurgiu.webp', alt: 'Decor botez băiețel exterior — ursulet, baloane și frunze monstera la pergola Măgura Events Giurgiu' },
+  { src: '/images/botezuri/decor-botez-fetita-roz-ursulet-neon-baloane-interior-salon-giurgiu.webp',    alt: 'Decor botez fetița — interior salon Măgura Events cu ursulet, neon personalizat și baloane roz Giurgiu' },
+  { src: '/images/galerie/decor-arc-floral.webp',                                                       alt: 'Arc floral cu trandafiri albi — decor premium pentru botez sau nuntă la Măgura Events Giurgiu' },
+  { src: '/images/saloane/salon-crystal-masa-rotunda-scaune-crem-aranjament-floral-iarna.webp',         alt: 'Salon Crystal amenajat pentru botez — masă rotundă cu scaune crem și aranjament floral Giurgiu' },
+  { src: '/images/locatie/exterior-salon-events-pergola-copaci-verzi-vara-magura-giurgiu.webp',         alt: 'Exterior Măgura Events vara — pergola albă și copaci verzi, cadru ideal pentru botez în grădină' },
+  { src: '/images/saloane/salon-nunti-masa-rotunda-centru-floral-albastru-auriu-giurgiu.webp',          alt: 'Salon botez Giurgiu — masă rotundă cu centru floral albastru-auriu Măgura Events' },
+];
 
 export const metadata: Metadata = {
   title: 'Botezuri — Salon Premium pentru Botezul Copilului Tău | Măgura Events',
@@ -72,6 +82,8 @@ export default function BotezuriPage() {
           </AnimatedSection>
         </div>
       </section>
+
+      <EventGallery photos={photos} />
     </>
   );
 }

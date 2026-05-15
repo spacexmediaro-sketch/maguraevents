@@ -2,6 +2,16 @@
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { IconCrown, IconMusic, IconPhotobox, IconCocktail, IconCake, IconCelebration, IconDecor } from '@/components/Icons';
+import EventGallery from '@/components/EventGallery';
+
+const majoratPhotos = [
+  { src: '/images/locatie/exterior-noapte-copaci-luminati-fairy-lights-gradina-magura-events-giurgiu.webp', alt: 'Exterior Măgura Events noaptea — copaci luminați cu fairy lights, atmosferă de petrecere majorat' },
+  { src: '/images/decor/photobooth-carte-povesti.webp',                                                    alt: 'Photobooth tematic pentru majorat — decor "A fost odată ca niciodată" Măgura Events Giurgiu' },
+  { src: '/images/saloane/salon-nunta-panoramic-interior-scaune-albe-candelabru-covor.webp',               alt: 'Interior salon panoramic Măgura Events — spațiu ideal pentru petrecere majorat 18 ani Giurgiu' },
+  { src: '/images/decor/cristale-exterior.webp',                                                           alt: 'Decor cristale luminoase exterior — instalație premium pentru majorat Măgura Events' },
+  { src: '/images/locatie/exterior-salon-events-pergola-copaci-verzi-vara-magura-giurgiu.webp',            alt: 'Exterior salon Măgura Events vara — pergolă și grădină pentru majorat în aer liber Giurgiu' },
+  { src: '/images/saloane/salon-crystal-panoramic.webp',                                                   alt: 'Salon Crystal Măgura Events Giurgiu — vedere panoramică interior pentru majorat 18 ani' },
+];
 
 export const metadata: Metadata = {
   title: 'Majorate — Petrecere de 18 Ani Spectaculoasă | Măgura Events Giurgiu',
@@ -70,6 +80,8 @@ export default function MajoratePage() {
           </AnimatedSection>
         </div>
       </section>
+
+      <EventGallery photos={majoratPhotos} />
     </>
   );
 }

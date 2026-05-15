@@ -2,6 +2,16 @@
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { IconPillar, IconProjector, IconMusic, IconStar } from '@/components/Icons';
+import EventGallery from '@/components/EventGallery';
+
+const corporatePhotos = [
+  { src: '/images/saloane/salon-crystal-panoramic.webp',                                                       alt: 'Salon Crystal vedere panoramică Măgura Events Giurgiu — spațiu configurabil pentru conferință sau gală' },
+  { src: '/images/saloane/salon-royal-interior.webp',                                                          alt: 'Interior Salon Royal Măgura Events Giurgiu — capacitate 450 persoane pentru eveniment corporate' },
+  { src: '/images/locatie/exterior-salon-panoramic-gradina-lac-magura-events-buturugeni-giurgiu.webp',         alt: 'Vedere panoramică exterior Măgura Events Buturugeni — grădina și lacul pentru team-building' },
+  { src: '/images/saloane/salon-nunta-panoramic-interior-scaune-albe-candelabru-covor.webp',                   alt: 'Interior salon panoramic Măgura Events Giurgiu — aranjament elegant pentru gală de premiere' },
+  { src: '/images/locatie/exterior-salon-events-pergola-copaci-verzi-vara-magura-giurgiu.webp',                alt: 'Exterior Măgura Events vara — pergolă și grădina verde, ideal pentru cocktail corporate' },
+  { src: '/images/locatie/gradina-lac-peisaj-verde-magura-events-giurgiu-langa-bucuresti.webp',                alt: 'Grădina și lacul Măgura Events Giurgiu — 40 km de București, cadru exclusivist pentru corporate' },
+];
 
 export const metadata: Metadata = {
   title: 'Evenimente Corporate — Conferințe, Gale și Team-Building | Măgura Events',
@@ -97,6 +107,8 @@ export default function CorporatePage() {
           </AnimatedSection>
         </div>
       </section>
+
+      <EventGallery photos={corporatePhotos} />
     </>
   );
 }

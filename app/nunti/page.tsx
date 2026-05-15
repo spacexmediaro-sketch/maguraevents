@@ -3,6 +3,19 @@ import Image from 'next/image';
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { Heart, CheckCircle2 } from 'lucide-react';
+import EventGallery from '@/components/EventGallery';
+
+const weddingPhotos = [
+  { src: '/images/nunti/masa-mirilor-mr-mrs-arc-floral-alb-verde-vedere-lac-giurgiu.webp',              alt: 'Masa mirilor Mr & Mrs cu arc floral alb-verde și vedere la lac — nuntă Giurgiu Măgura Events' },
+  { src: '/images/nunti/masa-nunta-trandafiri-albi-panza-alba-vedere-lac-salon-crystal.webp',           alt: 'Masă nuntă Salon Crystal Giurgiu — trandafiri albi și vedere panoramică la lac' },
+  { src: '/images/nunti/nunta-cuplu-toamna-copac-gradina-lac-magura-events-giurgiu.webp',               alt: 'Cuplu de miri toamna în grădina Măgura Events Giurgiu lângă lac' },
+  { src: '/images/nunti/decor-nunta-flori-suspendate-tavan-masa-festiva-roz-salon.webp',                alt: 'Decor nuntă extravagant — flori suspendate din tavan și masă festivă roz Măgura Events' },
+  { src: '/images/nunti/aranjament-masa-miri-floral-alb-orhidee-salon-nunta-giurgiu.webp',              alt: 'Aranjament masă miri cu orhidee albe și flori premium — nuntă Giurgiu' },
+  { src: '/images/saloane/salon-nunti-masa-aurie-farfurii-argintii-centru-floral-giurgiu.webp',         alt: 'Salon nunți Giurgiu — masă aurie cu farfurii argintii și centru floral Măgura Events' },
+  { src: '/images/nunti/masa-nunta-orhidee-farfurii-roz-aurii-vedere-gradina-vara.webp',                alt: 'Masă nuntă cu orhidee și farfurii roz-aurii, vedere la grădina verde Măgura Events' },
+  { src: '/images/nunti/nunta-cununie-civila-miri-semnat-acte-gradina-pergola-giurgiu.webp',            alt: 'Cununie civilă în grădina cu pergolă albă Măgura Events Giurgiu' },
+  { src: '/images/nunti/detaliu-masa-nunta-card-bun-venit-pahare-cristal-trandafir-alb.webp',           alt: 'Detaliu masă nuntă premium — card bun venit, pahare cristal și trandafir alb' },
+];
 
 export const metadata: Metadata = {
   title: 'Nunți — Organizare Premium în Salon de Lux | Măgura Events Giurgiu',
@@ -136,6 +149,8 @@ export default function NuntiPage() {
           </div>
         </div>
       </section>
+
+      <EventGallery photos={weddingPhotos} />
 
       {/* CTA */}
       <section className="py-20 border-t border-gold-600/10 text-center" style={{ background: '#080808' }}>

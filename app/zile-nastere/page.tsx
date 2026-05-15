@@ -4,6 +4,16 @@ import Link from 'next/link';
 import { IconCake, IconDecor, IconCamera, IconStar, IconMic, IconPhotobox } from '@/components/Icons';
 import type { ComponentType } from 'react';
 import type { IconProps } from '@/components/Icons';
+import EventGallery from '@/components/EventGallery';
+
+const birthdayPhotos = [
+  { src: '/images/zile-nastere/decor-zi-nastere-exterior-flori-colorate-baloane-bun-venit-giurgiu.webp', alt: 'Decor zi de naștere exterior Giurgiu — flori colorate, baloane și panou Bine ați venit Măgura Events' },
+  { src: '/images/botezuri/decor-botez-fetita-roz-ursulet-neon-baloane-interior-salon-giurgiu.webp',    alt: 'Decor aniversare interior salon Măgura Events — neon personalizat, baloane și decor tematic' },
+  { src: '/images/decor/photobooth-carte-povesti.webp',                                                  alt: 'Photobooth premium pentru aniversare — decor tematic Măgura Events Giurgiu' },
+  { src: '/images/saloane/salon-crystal-masa-rotunda-scaune-crem-aranjament-floral-iarna.webp',         alt: 'Salon Crystal amenajat pentru aniversare — masă elegantă cu aranjament floral Giurgiu' },
+  { src: '/images/locatie/exterior-salon-events-pergola-copaci-verzi-vara-magura-giurgiu.webp',         alt: 'Exterior Măgura Events vara — cadru perfect pentru aniversare în grădină Giurgiu' },
+  { src: '/images/decor/cristale-exterior.webp',                                                        alt: 'Instalație decorativă cu cristale — decor premium pentru zi de naștere la Măgura Events' },
+];
 
 export const metadata: Metadata = {
   title: 'Zile de Naștere — Aniversare Premium | Măgura Events Giurgiu',
@@ -73,6 +83,8 @@ export default function ZileNasterePage() {
           </AnimatedSection>
         </div>
       </section>
+
+      <EventGallery photos={birthdayPhotos} />
     </>
   );
 }
