@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { Users, Maximize2, Sparkles, CheckCircle2 } from 'lucide-react';
@@ -32,23 +33,16 @@ export default function SalonCrystalPage() {
           </AnimatedSection>
         </div>
 
-        <div
-          className="relative h-[60vh] min-h-96 overflow-hidden border-t border-gold-600/10"
-          style={{
-            background: `
-              radial-gradient(ellipse 80% 80% at 50% 100%, rgba(201,168,76,0.2) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 60% at 30% 30%, rgba(212,175,55,0.08) 0%, transparent 50%),
-              #0d0a04
-            `,
-          }}
-        >
-          {/* Candelabra silhouette hint */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-10">
-            <p className="font-serif text-cream-200" style={{ fontSize: '12rem', letterSpacing: '0.1em' }}>✦</p>
-          </div>
-          <div className="absolute top-3 right-4 text-[0.55rem] font-sans text-cream-700 tracking-widest uppercase opacity-60">
-            Adaugă imagini reale Salon Crystal
-          </div>
+        <div className="relative h-[60vh] min-h-96 overflow-hidden border-t border-gold-600/10">
+          <Image
+            src="/images/galerie/salon-crystal-interior.webp"
+            alt="Interior Salon Crystal — mese elegante cu scaune aurii și aranjamente florale premium"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+            quality={90}
+          />
           <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-noir-900 via-noir-900/60 to-transparent">
             <div className="container-luxury">
               <p className="label-gold mb-2">✦ Salon 1 ✦</p>

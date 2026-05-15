@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { Heart, CheckCircle2 } from 'lucide-react';
@@ -83,15 +84,34 @@ export default function NuntiPage() {
             </AnimatedSection>
 
             <AnimatedSection direction="right" delay={0.2}>
-              {/* Image placeholder */}
-              <div
-                className="h-96 border border-gold-600/15 mb-6"
-                style={{
-                  background: `radial-gradient(ellipse 80% 80% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 60%), #141414`,
-                }}
-              >
-                <div className="h-full flex items-center justify-center">
-                  <p className="font-sans text-xs text-cream-700 tracking-widest uppercase">Adaugă imagini nunți</p>
+              {/* Real wedding images */}
+              <div className="grid grid-cols-2 gap-2 mb-6">
+                <div className="relative h-72 col-span-2 overflow-hidden">
+                  <Image
+                    src="/images/nunti/cuplu-parc-toamna.webp"
+                    alt="Cuplu de miri în parcul Măgura Events — toamna magică"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="/images/nunti/mireasa-salon.webp"
+                    alt="Mireasă în rochie albă în Salon Crystal"
+                    fill
+                    className="object-cover"
+                    sizes="25vw"
+                  />
+                </div>
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="/images/galerie/nunta-cuplu-gradina.webp"
+                    alt="Miri sub pergola albă din grădina Măgura Events"
+                    fill
+                    className="object-cover"
+                    sizes="25vw"
+                  />
                 </div>
               </div>
 

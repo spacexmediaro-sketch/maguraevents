@@ -3,35 +3,114 @@
 import { useState, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import AnimatedSection from './AnimatedSection';
 import Link from 'next/link';
 
-const categories = ['Toate', 'Nunți', 'Botezuri', 'Majorate', 'Corporate', 'Saloane', 'Meniuri'];
+const categories = ['Toate', 'Nunți', 'Saloane', 'Decor', 'Locație'];
 
 type GalleryItem = {
   id:       number;
-  category: string;
+  src:      string;
   alt:      string;
+  category: string;
   aspect:   'landscape' | 'portrait' | 'square';
-  color:    string;
 };
 
 const galleryItems: GalleryItem[] = [
-  { id: 1,  category: 'Nunți',     alt: 'Salon Crystal decorat pentru nuntă cu lumânări și flori',        aspect: 'landscape', color: '#1a1308' },
-  { id: 2,  category: 'Nunți',     alt: 'Masa principală a mirilor cu aranjament floral premium',          aspect: 'portrait',  color: '#160e04' },
-  { id: 3,  category: 'Botezuri',  alt: 'Decor botez elegant cu albastru și auriu',                       aspect: 'landscape', color: '#0d1520' },
-  { id: 4,  category: 'Saloane',   alt: 'Salon Royal pregătit pentru un eveniment de seară',              aspect: 'landscape', color: '#1a1506' },
-  { id: 5,  category: 'Meniuri',   alt: 'Platou aperitive premium cu prezentare elegantă',                aspect: 'square',    color: '#1a1008' },
-  { id: 6,  category: 'Majorate',  alt: 'Pistă de dans iluminată spectaculos',                            aspect: 'landscape', color: '#0e0e1a' },
-  { id: 7,  category: 'Corporate', alt: 'Sala de conferințe configurată profesional',                     aspect: 'landscape', color: '#0e1418' },
-  { id: 8,  category: 'Nunți',     alt: 'Tort nupțial etajat decorat cu flori naturale',                  aspect: 'portrait',  color: '#1a1206' },
-  { id: 9,  category: 'Saloane',   alt: 'Detaliu masă — tacâmuri premium și pahare de cristal',           aspect: 'square',    color: '#141008' },
-  { id: 10, category: 'Botezuri',  alt: 'Aranjament masă botez cu tort personalizat',                     aspect: 'landscape', color: '#0d1520' },
-  { id: 11, category: 'Majorate',  alt: 'Decor photobooth majorat cu baloane și lumini',                  aspect: 'portrait',  color: '#16041a' },
-  { id: 12, category: 'Meniuri',   alt: 'Bufet cald cu preparate diverse pentru nuntă',                   aspect: 'landscape', color: '#1a0e04' },
+  {
+    id: 1,
+    src: '/images/galerie/salon-crystal-interior.webp',
+    alt: 'Interior Salon Crystal — scaune elegante aurii și aranjamente florale premium',
+    category: 'Saloane',
+    aspect: 'landscape',
+  },
+  {
+    id: 2,
+    src: '/images/galerie/nunta-cuplu-parc.webp',
+    alt: 'Cuplu de miri în parcul Măgura Events sub copaci colorați toamna',
+    category: 'Nunți',
+    aspect: 'landscape',
+  },
+  {
+    id: 3,
+    src: '/images/galerie/nunta-masa-verde.webp',
+    alt: 'Aranjament masă nuntă — decor verde și auriu, meniu personalizat E&A',
+    category: 'Nunți',
+    aspect: 'portrait',
+  },
+  {
+    id: 4,
+    src: '/images/galerie/decor-arc-floral.webp',
+    alt: 'Arc floral cu trandafiri albi și vedere panoramică la lac — Măgura Events',
+    category: 'Decor',
+    aspect: 'portrait',
+  },
+  {
+    id: 5,
+    src: '/images/galerie/nunta-mireasa.webp',
+    alt: 'Mireasă în rochie albă cu paiete în Salon Crystal, decor floral alb',
+    category: 'Nunți',
+    aspect: 'portrait',
+  },
+  {
+    id: 6,
+    src: '/images/galerie/nunta-cuplu-gradina.webp',
+    alt: 'Miri ținându-se de mână sub pergola albă din grădina Măgura Events',
+    category: 'Nunți',
+    aspect: 'landscape',
+  },
+  {
+    id: 7,
+    src: '/images/galerie/decor-cristale.webp',
+    alt: 'Perdea de cristale decorative în grădina Măgura Events',
+    category: 'Decor',
+    aspect: 'portrait',
+  },
+  {
+    id: 8,
+    src: '/images/galerie/decor-photobooth.webp',
+    alt: 'Photobooth tematic "Once upon a time" cu vedere la lac',
+    category: 'Decor',
+    aspect: 'landscape',
+  },
+  {
+    id: 9,
+    src: '/images/galerie/salon-royal-masa.webp',
+    alt: 'Salon Royal — aranjament masă rotundă cu farfurii aurii și decor verde',
+    category: 'Saloane',
+    aspect: 'landscape',
+  },
+  {
+    id: 10,
+    src: '/images/galerie/detaliu-masa-premium.webp',
+    alt: 'Detaliu masă premium — farfurii aurii, pahare de cristal și flori albe',
+    category: 'Saloane',
+    aspect: 'square',
+  },
+  {
+    id: 11,
+    src: '/images/galerie/salon-crystal-nunta.webp',
+    alt: 'Salon Crystal complet amenajat pentru nuntă — vedere panoramică',
+    category: 'Saloane',
+    aspect: 'landscape',
+  },
+  {
+    id: 12,
+    src: '/images/galerie/locatie-lac-lebede.webp',
+    alt: 'Lacul Măgura Events cu lebede albe — natură pitorească',
+    category: 'Locație',
+    aspect: 'portrait',
+  },
 ];
 
-function PlaceholderImage({ item, onClick }: { item: GalleryItem; onClick: () => void }) {
+function GalleryImage({
+  item,
+  onClick,
+}: {
+  item: GalleryItem;
+  onClick: () => void;
+}) {
   const aspectClass = {
     landscape: 'aspect-[4/3]',
     portrait:  'aspect-[3/4]',
@@ -44,44 +123,28 @@ function PlaceholderImage({ item, onClick }: { item: GalleryItem; onClick: () =>
       className={`relative ${aspectClass} w-full overflow-hidden group focus:outline-none focus:ring-2 focus:ring-gold-600`}
       aria-label={`Vizualizează: ${item.alt}`}
     >
-      {/* Placeholder background */}
-      <div
-        className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-        style={{
-          background: `
-            radial-gradient(ellipse 80% 80% at 50% 100%, rgba(201,168,76,0.15) 0%, transparent 60%),
-            radial-gradient(ellipse 50% 50% at 30% 30%, rgba(212,175,55,0.08) 0%, transparent 50%),
-            ${item.color}
-          `,
-        }}
+      <Image
+        src={item.src}
+        alt={item.alt}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-110"
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+        loading="lazy"
       />
 
-      {/* Grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, #C9A84C, #C9A84C 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #C9A84C, #C9A84C 1px, transparent 1px, transparent 40px)',
-        }}
-      />
-
-      {/* Hover overlay */}
-      <div className="absolute inset-0 bg-noir-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+      {/* Overlay on hover */}
+      <div className="absolute inset-0 bg-noir-900/55 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
         <ZoomIn size={28} className="text-gold-600" />
       </div>
 
       {/* Category tag */}
-      <div className="absolute top-3 left-3 text-[0.55rem] font-sans tracking-widest uppercase px-2 py-1 bg-noir-900/80 text-gold-600/80">
+      <div className="absolute top-3 left-3 text-[0.55rem] font-sans tracking-widest uppercase px-2 py-1 bg-noir-900/80 text-gold-600/90">
         {item.category}
       </div>
 
-      {/* Caption */}
+      {/* Caption on hover */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-noir-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-        <p className="font-sans text-xs text-cream-400 text-balance">{item.alt}</p>
-      </div>
-
-      {/* Placeholder text */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-20">
-        <p className="font-serif text-xs text-cream-500 text-center px-4">Adaugă imagine reală</p>
+        <p className="font-sans text-xs text-cream-300 line-clamp-2">{item.alt}</p>
       </div>
     </button>
   );
@@ -99,17 +162,16 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
 
   const openLightbox  = useCallback((i: number) => setLightboxIndex(i), []);
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
-  const prevImage = useCallback(() => {
-    setLightboxIndex((i) => i !== null ? (i - 1 + displayItems.length) % displayItems.length : null);
-  }, [displayItems.length]);
-  const nextImage = useCallback(() => {
-    setLightboxIndex((i) => i !== null ? (i + 1) % displayItems.length : null);
-  }, [displayItems.length]);
+  const prevImage = useCallback(() => setLightboxIndex((i) => i !== null ? (i - 1 + displayItems.length) % displayItems.length : null), [displayItems.length]);
+  const nextImage = useCallback(() => setLightboxIndex((i) => i !== null ? (i + 1) % displayItems.length : null), [displayItems.length]);
 
   return (
-    <section className={`${preview ? 'section-padding' : 'pt-36 pb-20'} relative`} style={{ background: '#080808' }}>
+    <section
+      className={`${preview ? 'section-padding' : 'pt-36 pb-20'} relative`}
+      style={{ background: '#080808' }}
+    >
       <div className="container-luxury">
-        {preview && (
+        {preview ? (
           <AnimatedSection className="text-center mb-12">
             <p className="label-gold mb-4">✦ Galerie foto ✦</p>
             <h2 className="heading-lg text-cream-200 mb-4">
@@ -117,10 +179,11 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
               <span className="text-gold-gradient italic">imortalizate</span>
             </h2>
             <span className="gold-line" />
+            <p className="font-sans text-cream-500 max-w-xl mx-auto mt-6" style={{ lineHeight: 1.8 }}>
+              Fiecare imagine spune o poveste — a unui cuplu fericit, a unui salon transformat în magie, a unui moment unic.
+            </p>
           </AnimatedSection>
-        )}
-
-        {!preview && (
+        ) : (
           <AnimatedSection className="text-center mb-12">
             <p className="label-gold mb-2">✦ Galerie foto ✦</p>
             <h1 className="heading-lg text-cream-200 mb-4">
@@ -149,10 +212,7 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
         </div>
 
         {/* Gallery grid */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3"
-          layout
-        >
+        <motion.div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3" layout>
           <AnimatePresence>
             {displayItems.map((item, i) => (
               <motion.div
@@ -163,7 +223,7 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
                 exit={{    opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
               >
-                <PlaceholderImage item={item} onClick={() => openLightbox(i)} />
+                <GalleryImage item={item} onClick={() => openLightbox(i)} />
               </motion.div>
             ))}
           </AnimatePresence>
@@ -185,10 +245,9 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{    opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-noir-950/95 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-noir-950/97 backdrop-blur-md"
             onClick={closeLightbox}
           >
-            {/* Close */}
             <button
               onClick={closeLightbox}
               className="absolute top-6 right-6 text-cream-400 hover:text-gold-600 transition-colors z-10"
@@ -196,36 +255,34 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
             >
               <X size={28} />
             </button>
-
-            {/* Nav prev */}
             <button
               onClick={(e) => { e.stopPropagation(); prevImage(); }}
               className="absolute left-4 md:left-8 text-cream-400 hover:text-gold-600 transition-colors z-10 p-2"
-              aria-label="Imaginea anterioară"
+              aria-label="Anterior"
             >
               <ChevronLeft size={36} />
             </button>
 
-            {/* Image */}
             <motion.div
               key={lightboxIndex}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{    opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="relative max-w-4xl max-h-[80vh] w-full mx-16"
+              className="relative max-w-4xl max-h-[85vh] w-full mx-20"
               onClick={(e) => e.stopPropagation()}
             >
-              <div
-                className="w-full aspect-[4/3] rounded-sm"
-                style={{
-                  background: `
-                    radial-gradient(ellipse 80% 80% at 50% 100%, rgba(201,168,76,0.2) 0%, transparent 60%),
-                    ${displayItems[lightboxIndex]?.color ?? '#141414'}
-                  `,
-                }}
-              />
-              <p className="text-center font-sans text-xs text-cream-500 mt-3">
+              <div className="relative w-full" style={{ maxHeight: '80vh', aspectRatio: '4/3' }}>
+                <Image
+                  src={displayItems[lightboxIndex]?.src ?? ''}
+                  alt={displayItems[lightboxIndex]?.alt ?? ''}
+                  fill
+                  className="object-contain"
+                  sizes="90vw"
+                  quality={90}
+                />
+              </div>
+              <p className="text-center font-sans text-xs text-cream-500 mt-4 px-4">
                 {displayItems[lightboxIndex]?.alt}
               </p>
               <p className="text-center font-sans text-[0.6rem] text-cream-700 mt-1">
@@ -233,11 +290,10 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
               </p>
             </motion.div>
 
-            {/* Nav next */}
             <button
               onClick={(e) => { e.stopPropagation(); nextImage(); }}
               className="absolute right-4 md:right-8 text-cream-400 hover:text-gold-600 transition-colors z-10 p-2"
-              aria-label="Imaginea următoare"
+              aria-label="Următor"
             >
               <ChevronRight size={36} />
             </button>

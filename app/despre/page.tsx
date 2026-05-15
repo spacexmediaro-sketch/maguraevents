@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { Heart, Award, Users, Star } from 'lucide-react';
@@ -66,24 +67,31 @@ export default function DesprePage() {
         <div className="container-luxury">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
-              {/* Image placeholder */}
-              <div
-                className="relative h-96 border border-gold-600/15"
-                style={{
-                  background: `
-                    radial-gradient(ellipse 80% 80% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 60%),
-                    #141414
-                  `,
-                }}
-              >
-                <div className="absolute inset-0 flex items-center justify-center flex-col gap-3">
-                  <p className="font-serif text-6xl text-gold-gradient opacity-20">2011</p>
-                  <p className="font-sans text-xs text-cream-700 tracking-widest uppercase">
-                    Adaugă imagine reală salon / exterior
-                  </p>
+              {/* Real photos */}
+              <div className="space-y-2">
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src="/images/locatie/lac-lebede.webp"
+                    alt="Lacul Măgura Events cu lebede albe — natură pitorească în grădina locației"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-noir-900 to-transparent">
+                    <p className="label-gold text-[0.6rem]">Lacul privat Măgura Events</p>
+                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-noir-900 to-transparent">
-                  <p className="label-gold text-[0.6rem]">Fondat în 2011</p>
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="/images/locatie/arc-floral-lac.webp"
+                    alt="Arc floral cu vedere panoramică la lac — Măgura Events"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-noir-900 to-transparent">
+                    <p className="label-gold text-[0.6rem]">Fondat în 2011</p>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Users, Maximize2, Sparkles, ArrowRight } from 'lucide-react';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
@@ -16,6 +17,8 @@ const saloane = [
     stil:       'Clasic Premium',
     features:   ['Lumini ambientale LED', 'Scenă și pistă de dans', 'Sistem audio profesional', 'Climatizare inteligentă'],
     description: 'Salonul Crystal îmbină arhitectura clasică cu rafinamentul modern. Candelabre elegante, oglinzi cu rame aurite și lumini ambientale create pentru fiecare moment al evenimentului dumneavoastră.',
+    image:      '/images/galerie/salon-crystal-interior.webp',
+    imageAlt:   'Interior Salon Crystal cu mese aurii și aranjamente florale premium',
     color:      '#C9A84C',
     gradient:   'linear-gradient(135deg, rgba(201,168,76,0.15) 0%, rgba(212,175,55,0.05) 100%)',
   },
@@ -29,6 +32,8 @@ const saloane = [
     stil:       'Grand Luxe',
     features:   ['Terasă privată', 'Foyer de primire separat', 'Proiector și ecran cinema', 'Bar dedicat'],
     description: 'Salonul Royal oferă o experiență grandioasă, cu tavane înalte, draperii de catifea și o terasă privată cu vedere panoramică. Conceput pentru nunți mari și evenimente de excepție.',
+    image:      '/images/galerie/salon-royal-masa.webp',
+    imageAlt:   'Salon Royal — aranjament masă rotundă cu farfurii aurii și decor verde premium',
     color:      '#D4AF37',
     gradient:   'linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(201,168,76,0.05) 100%)',
   },
@@ -72,53 +77,22 @@ export default function SalonShowcase() {
                   style={{ background: salon.gradient, minHeight: '560px' }}
                 >
                   {/* Image placeholder */}
-                  <div className="relative h-72 overflow-hidden" style={{ background: '#141414' }}>
-                    {/* Cinematic light effect */}
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        background: `
-                          radial-gradient(ellipse 80% 80% at 50% 100%, ${salon.color}22 0%, transparent 60%),
-                          radial-gradient(ellipse 60% 60% at 30% 30%, ${salon.color}15 0%, transparent 50%),
-                          linear-gradient(180deg, #1a1508 0%, #0a0805 100%)
-                        `,
-                      }}
+                  <div className="relative h-72 overflow-hidden">
+                    {/* Real photo */}
+                    <Image
+                      src={(salon as typeof saloane[0] & { image: string }).image}
+                      alt={(salon as typeof saloane[0] & { imageAlt: string }).imageAlt}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="lazy"
                     />
-                    {/* Table decoration silhouette */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center pb-6 opacity-40">
-                      <div className="flex items-end justify-center gap-3">
-                        {[...Array(5)].map((_, i) => (
-                          <div
-                            key={i}
-                            className="rounded-t-full"
-                            style={{
-                              width: i === 2 ? '3px' : '2px',
-                              height: i === 2 ? '60px' : `${40 + (i % 3) * 10}px`,
-                              background: `linear-gradient(to top, ${salon.color}, transparent)`,
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Salon name watermark */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span
-                        className="font-serif font-light opacity-[0.07] select-none"
-                        style={{ fontSize: '5rem', color: salon.color, letterSpacing: '0.2em' }}
-                      >
-                        {salon.id === 'salon-1' ? 'CRYSTAL' : 'ROYAL'}
-                      </span>
-                    </div>
+                    {/* Dark overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-noir-900/90 via-noir-900/20 to-transparent" />
 
                     {/* Caption overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-noir-900 to-transparent">
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
                       <span className="label-gold text-[0.6rem]">{salon.stil}</span>
-                    </div>
-
-                    {/* Image placeholder notice */}
-                    <div className="absolute top-4 right-4 text-[0.55rem] font-sans tracking-widest uppercase text-cream-700 opacity-60">
-                      Adaugă imagini reale din salon
                     </div>
                   </div>
 

@@ -2,12 +2,30 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
+// Rotăm între 3 imagini reale în hero
+const heroImages = [
+  {
+    src: '/images/hero/hero-salon-crystal.webp',
+    alt: 'Interior Salon Crystal — mese elegante cu scaune aurii și aranjamente florale premium',
+  },
+  {
+    src: '/images/hero/hero-cuplu-gradina.webp',
+    alt: 'Miri la Măgura Events — pergola albă din grădina salonului',
+  },
+  {
+    src: '/images/hero/hero-detaliu-masa.webp',
+    alt: 'Detaliu masă premium — farfurii aurii, pahare de cristal și aranjament floral',
+  },
+];
+
 export default function Hero() {
-  const [introVisible, setIntroVisible] = useState(true);
-  const [heroVisible,  setHeroVisible]  = useState(false);
+  const [introVisible,  setIntroVisible]  = useState(true);
+  const [heroVisible,   setHeroVisible]   = useState(false);
+  const [currentImage,  setCurrentImage]  = useState(0);
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,11 +36,19 @@ export default function Hero() {
     return () => clearTimeout(introTimer);
   }, []);
 
+  // Rotație automată imagini la fiecare 6s
+  useEffect(() => {
+    if (!heroVisible) return;
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [heroVisible]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (!parallaxRef.current) return;
-      const y = window.scrollY;
-      parallaxRef.current.style.transform = `translateY(${y * 0.4}px)`;
+      parallaxRef.current.style.transform = `translateY(${window.scrollY * 0.35}px)`;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -42,40 +68,16 @@ export default function Hero() {
             style={{ background: '#040404' }}
             aria-hidden="true"
           >
-            {/* Warm ambient light blobs */}
-            <div
-              className="absolute rounded-full opacity-20 blur-[120px]"
-              style={{
-                width: '50vw', height: '50vw',
-                background: 'radial-gradient(circle, #C9A84C 0%, transparent 70%)',
-                top: '10%', left: '20%',
-                animation: 'float 4s ease-in-out infinite',
-              }}
-            />
-            <div
-              className="absolute rounded-full opacity-10 blur-[100px]"
-              style={{
-                width: '40vw', height: '40vw',
-                background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)',
-                bottom: '15%', right: '15%',
-                animation: 'float 5s ease-in-out infinite reverse',
-              }}
-            />
+            <div className="absolute rounded-full opacity-15 blur-[120px]" style={{ width: '50vw', height: '50vw', background: 'radial-gradient(circle, #C9A84C 0%, transparent 70%)', top: '10%', left: '20%', animation: 'float 4s ease-in-out infinite' }} />
+            <div className="absolute rounded-full opacity-08 blur-[100px]" style={{ width: '40vw', height: '40vw', background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)', bottom: '15%', right: '15%', animation: 'float 5s ease-in-out infinite reverse' }} />
 
-            {/* Logo reveal */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center"
             >
-              {/* Decorative ornament top */}
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="flex items-center gap-3 mb-6"
-              >
+              <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.4, duration: 0.8 }} className="flex items-center gap-3 mb-6">
                 <div className="w-20 h-px" style={{ background: 'linear-gradient(90deg, transparent, #C9A84C)' }} />
                 <span style={{ color: '#C9A84C', fontSize: '1rem' }}>✦</span>
                 <div className="w-20 h-px" style={{ background: 'linear-gradient(90deg, #C9A84C, transparent)' }} />
@@ -90,7 +92,6 @@ export default function Hero() {
               >
                 MĂGURA
               </motion.span>
-
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.7 }}
@@ -101,24 +102,12 @@ export default function Hero() {
                 EVENTS
               </motion.span>
 
-              {/* Decorative ornament bottom */}
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex items-center gap-3 mt-6"
-              >
+              <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.6, duration: 0.8 }} className="flex items-center gap-3 mt-6">
                 <div className="w-20 h-px" style={{ background: 'linear-gradient(90deg, transparent, #C9A84C)' }} />
                 <span style={{ color: '#C9A84C', fontSize: '0.6rem' }}>◆</span>
                 <div className="w-20 h-px" style={{ background: 'linear-gradient(90deg, #C9A84C, transparent)' }} />
               </motion.div>
-
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.5 }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-                className="font-sans text-cream-600 text-xs tracking-[0.4em] uppercase mt-8"
-              >
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} transition={{ delay: 1.2, duration: 0.8 }} className="font-sans text-cream-600 text-xs tracking-[0.4em] uppercase mt-8">
                 Momente care rămân
               </motion.p>
             </motion.div>
@@ -127,63 +116,64 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* ── HERO SECTION ── */}
-      <section
-        className="relative h-screen min-h-[700px] overflow-hidden"
-        aria-label="Măgura Events — Saloane premium pentru evenimente memorabile"
-      >
-        {/* Background: cinematic luxury atmosphere */}
-        <div ref={parallaxRef} className="absolute inset-0 will-change-transform">
-          {/* Base color layers */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `
-                radial-gradient(ellipse 80% 80% at 50% 100%, rgba(139,105,20,0.25) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 30% 60%, rgba(201,168,76,0.12) 0%, transparent 50%),
-                radial-gradient(ellipse 50% 60% at 70% 40%, rgba(212,175,55,0.08) 0%, transparent 50%),
-                linear-gradient(180deg, #0a0805 0%, #080808 60%, #040404 100%)
-              `,
-            }}
-          />
+      <section className="relative h-screen min-h-[700px] overflow-hidden" aria-label="Măgura Events — Saloane premium pentru evenimente memorabile">
 
-          {/* Simulated light bokeh for luxury venue atmosphere */}
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full opacity-[0.06]"
-              style={{
-                width:  `${Math.random() * 200 + 60}px`,
-                height: `${Math.random() * 200 + 60}px`,
-                background: `radial-gradient(circle, ${i % 2 === 0 ? '#D4AF37' : '#C9A84C'} 0%, transparent 70%)`,
-                top:   `${Math.random() * 100}%`,
-                left:  `${Math.random() * 100}%`,
-                animation: `float ${4 + Math.random() * 4}s ease-in-out ${Math.random() * 2}s infinite`,
-                filter: 'blur(20px)',
-              }}
-            />
-          ))}
-
-          {/* Table setting silhouette hint */}
-          <div
-            className="absolute bottom-0 left-0 right-0 h-2/5 opacity-20"
-            style={{
-              background: `
-                radial-gradient(ellipse 100% 60% at 50% 100%,
-                  rgba(201,168,76,0.3) 0%,
-                  transparent 60%
-                )
-              `,
-            }}
-          />
+        {/* Real photo background with parallax */}
+        <div ref={parallaxRef} className="absolute inset-0 will-change-transform" style={{ top: '-10%', height: '120%' }}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentImage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={heroImages[currentImage].src}
+                alt={heroImages[currentImage].alt}
+                fill
+                priority={currentImage === 0}
+                className="object-cover object-center"
+                sizes="100vw"
+                quality={85}
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Hero gradient overlay */}
+        {/* Gradient overlay for dark luxury look */}
         <div
           className="absolute inset-0 z-10"
           style={{
-            background: 'linear-gradient(180deg, rgba(8,8,8,0.2) 0%, rgba(8,8,8,0.45) 50%, rgba(8,8,8,0.92) 100%)',
+            background: 'linear-gradient(180deg, rgba(8,8,8,0.45) 0%, rgba(8,8,8,0.3) 40%, rgba(8,8,8,0.75) 80%, rgba(8,8,8,0.97) 100%)',
           }}
         />
+
+        {/* Gold vignette */}
+        <div
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 100% 100% at 50% 100%, rgba(139,105,20,0.15) 0%, transparent 60%)',
+          }}
+        />
+
+        {/* Image dots indicator */}
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+          {heroImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentImage(i)}
+              className="transition-all duration-300"
+              aria-label={`Imaginea ${i + 1}`}
+              style={{
+                width: i === currentImage ? '24px' : '6px',
+                height: '2px',
+                background: i === currentImage ? '#D4AF37' : 'rgba(212,175,55,0.35)',
+              }}
+            />
+          ))}
+        </div>
 
         {/* Hero content */}
         <motion.div
@@ -192,23 +182,21 @@ export default function Hero() {
           transition={{ duration: 1.2 }}
           className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6"
         >
-          {/* Label */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: heroVisible ? 1 : 0, y: heroVisible ? 0 : 20 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             className="label-gold mb-6"
           >
-            ✦ Două saloane de excepție ✦
+            ✦ Două saloane de excepție în județul Buzău ✦
           </motion.p>
 
-          {/* Main heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: heroVisible ? 1 : 0, y: heroVisible ? 0 : 30 }}
             transition={{ delay: 0.4, duration: 1 }}
-            className="font-serif font-light text-cream-200 mb-6"
-            style={{ fontSize: 'clamp(2.8rem, 7vw, 7rem)', lineHeight: 1.05, letterSpacing: '0.04em' }}
+            className="font-serif font-light text-cream-100 mb-6"
+            style={{ fontSize: 'clamp(2.8rem, 7vw, 7rem)', lineHeight: 1.05, letterSpacing: '0.04em', textShadow: '0 2px 40px rgba(0,0,0,0.5)' }}
           >
             Unde visele{' '}
             <span className="block italic text-gold-gradient">
@@ -216,7 +204,6 @@ export default function Hero() {
             </span>
           </motion.h1>
 
-          {/* Gold divider */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: heroVisible ? 1 : 0 }}
@@ -228,18 +215,16 @@ export default function Hero() {
             <div className="w-16 h-px" style={{ background: 'linear-gradient(90deg, #C9A84C, transparent)' }} />
           </motion.div>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: heroVisible ? 1 : 0, y: heroVisible ? 0 : 20 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="font-sans font-light text-cream-500 max-w-xl mx-auto mb-12"
-            style={{ fontSize: '1rem', lineHeight: 1.8, letterSpacing: '0.05em' }}
+            className="font-sans font-light text-cream-400 max-w-xl mx-auto mb-12"
+            style={{ fontSize: '1rem', lineHeight: 1.8, letterSpacing: '0.03em' }}
           >
-            Nunți, botezuri, majorate și evenimente corporate organizate cu rafinament și atenție impecabilă la fiecare detaliu, în inima județului Buzău.
+            Nunți, botezuri, majorate și evenimente corporate organizate cu rafinament și atenție impecabilă la fiecare detaliu.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: heroVisible ? 1 : 0, y: heroVisible ? 0 : 20 }}
@@ -263,10 +248,7 @@ export default function Hero() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
         >
           <span className="font-sans text-xs tracking-widest uppercase text-cream-600">Descoperă</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8 }}
-          >
+          <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
             <ChevronDown size={18} className="text-gold-600" />
           </motion.div>
         </motion.div>
