@@ -334,23 +334,24 @@ const galleryItems: GalleryItem[] = [
 ];
 
 function GalleryImage({ item, onClick }: { item: GalleryItem; onClick: () => void }) {
-  const aspectClass = {
-    landscape: 'aspect-[4/3]',
-    portrait:  'aspect-[3/4]',
-    square:    'aspect-square',
+  const dims = {
+    landscape: { w: 800, h: 600 },
+    portrait:  { w: 800, h: 1067 },
+    square:    { w: 800, h: 800 },
   }[item.aspect];
 
   return (
     <button
       onClick={onClick}
-      className={`relative ${aspectClass} w-full overflow-hidden group focus:outline-none focus:ring-2 focus:ring-gold-600`}
+      className="relative w-full overflow-hidden group focus:outline-none focus:ring-2 focus:ring-gold-600 block"
       aria-label={`Vizualizează: ${item.alt}`}
     >
       <Image
         src={item.src}
         alt={item.alt}
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-110"
+        width={dims.w}
+        height={dims.h}
+        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110 block"
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         loading="lazy"
       />
@@ -435,23 +436,23 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
           </div>
         )}
 
-        {/* Grid */}
-        <motion.div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3" layout>
+        {/* Masonry columns — fără goluri */}
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-1.5">
           <AnimatePresence>
             {displayItems.map((item, i) => (
               <motion.div
                 key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{    opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35 }}
+                className="break-inside-avoid mb-1.5"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{    opacity: 0 }}
+                transition={{ duration: 0.3 }}
               >
                 <GalleryImage item={item} onClick={() => openLightbox(i)} />
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {preview && (
           <AnimatedSection className="text-center mt-12">
