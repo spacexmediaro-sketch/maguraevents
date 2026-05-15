@@ -275,6 +275,62 @@ const galleryItems: GalleryItem[] = [
     alt: 'Decor zi de naștere exterior Giurgiu — flori colorate, baloane și panou Bine ați venit Măgura Events',
     category: 'Zile de Naștere', aspect: 'landscape',
   },
+
+  // ── SALOANE (continuare) ─────────────────────────────────────────────────
+  {
+    id: 42,
+    src: '/images/saloane/salon-crystal-panoramic.webp',
+    alt: 'Salon Crystal vedere panoramică Măgura Events Giurgiu — interior complet amenajat pentru eveniment premium',
+    category: 'Saloane', aspect: 'landscape',
+  },
+  {
+    id: 43,
+    src: '/images/saloane/salon-royal-interior.webp',
+    alt: 'Interior Salon Royal Măgura Events Giurgiu — sală de evenimente cu capacitate 450 persoane, decor elegant',
+    category: 'Saloane', aspect: 'landscape',
+  },
+  {
+    id: 44,
+    src: '/images/saloane/aranjament-masa-verde-auriu.webp',
+    alt: 'Aranjament masă salon Măgura Events — decor verde și auriu, flori naturale, design premium nuntă Giurgiu',
+    category: 'Saloane', aspect: 'landscape',
+  },
+
+  // ── NUNȚI (continuare) ────────────────────────────────────────────────────
+  {
+    id: 45,
+    src: '/images/nunti/cuplu-parc-toamna.webp',
+    alt: 'Cuplu de miri toamna în parcul Măgura Events Giurgiu — sesiune foto nuntă lângă lac, frunze colorate',
+    category: 'Nunți', aspect: 'landscape',
+  },
+  {
+    id: 46,
+    src: '/images/galerie/nunta-mireasa.webp',
+    alt: 'Mireasă elegantă în Salon Crystal Măgura Events — rochie albă, decor floral premium nuntă Giurgiu',
+    category: 'Nunți', aspect: 'portrait',
+  },
+
+  // ── DECOR (continuare) ────────────────────────────────────────────────────
+  {
+    id: 47,
+    src: '/images/decor/cristale-exterior.webp',
+    alt: 'Decor cristale exterior Măgura Events Giurgiu — instalație luminoasă elegantă pentru nuntă în grădină',
+    category: 'Decor', aspect: 'portrait',
+  },
+  {
+    id: 48,
+    src: '/images/decor/photobooth-carte-povesti.webp',
+    alt: 'Photobooth "A fost odată ca niciodată" Măgura Events — decor tematic pentru nuntă de poveste Giurgiu',
+    category: 'Decor', aspect: 'landscape',
+  },
+
+  // ── LOCAȚIE (continuare) ──────────────────────────────────────────────────
+  {
+    id: 49,
+    src: '/images/galerie/locatie-lac-lebede.webp',
+    alt: 'Lacul cu lebede Măgura Events Giurgiu — natură pitorească în grădina locației de evenimente premium',
+    category: 'Locație', aspect: 'portrait',
+  },
 ];
 
 function GalleryImage({ item, onClick }: { item: GalleryItem; onClick: () => void }) {
