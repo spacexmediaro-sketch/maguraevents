@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function GdprPage() {
                   {[
                     ['Denumire',    'AGRO & FISHING MAGURA SRL'],
                     ['CUI',         '29032418'],
-                    ['Adresă',      'Sat Măgura, Județul Buzău, România'],
+                    ['Adresă',      'Sat Măgura, Comuna Buturugeni, Județul Giurgiu, România'],
                     ['Email',       'contact@magura-events.ro'],
                     ['Responsabil GDPR', 'AGRO & FISHING MAGURA SRL (intern)'],
                   ].map(([k, v]) => (

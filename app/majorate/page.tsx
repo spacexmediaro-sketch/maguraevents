@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { IconCrown, IconMusic, IconPhotobox, IconCocktail, IconCake, IconCelebration, IconDecor } from '@/components/Icons';
 
 export const metadata: Metadata = {
-  title: 'Majorate — Petrecere de 18 Ani Spectaculoasă | Măgura Events Buzău',
+  title: 'Majorate — Petrecere de 18 Ani Spectaculoasă | Măgura Events Giurgiu',
   description:
-    'Organizăm petreceri de majorat spectaculoase în saloanele premium din Buzău. DJ profesionist, lumini de scenă, pistă de dans, photobox și tot ce ai nevoie pentru cea mai tare petrecere de 18 ani.',
-  keywords: ['majorat Buzău', 'petrecere majorat', 'salon majorat', 'organizare majorat', 'petrecere 18 ani'],
+    'Organizăm petreceri de majorat spectaculoase în saloanele premium din Giurgiu. DJ profesionist, lumini de scenă, pistă de dans, photobox și tot ce ai nevoie pentru cea mai tare petrecere de 18 ani.',
+  keywords: ['majorat Giurgiu', 'petrecere majorat', 'salon majorat', 'organizare majorat', 'petrecere 18 ani'],
   alternates: { canonical: 'https://magura-events.ro/majorate' },
 };
 

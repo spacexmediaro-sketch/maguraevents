@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function ConfidentialitatePage() {
           <div className="space-y-8 font-sans text-sm text-cream-500" style={{ lineHeight: 1.9 }}>
             <section>
               <h2 className="font-serif text-xl text-cream-200 mb-3">1. Operatorul de date</h2>
-              <p>Operatorul de date cu caracter personal este <strong className="text-cream-300">AGRO & FISHING MAGURA SRL</strong>, CUI 29032418, Nr. Reg. Com. J2011000564520, cu sediul în Sat Măgura, Județul Buzău, email: contact@magura-events.ro.</p>
+              <p>Operatorul de date cu caracter personal este <strong className="text-cream-300">AGRO & FISHING MAGURA SRL</strong>, CUI 29032418, Nr. Reg. Com. J2011000564520, cu sediul în Sat Măgura, Comuna Buturugeni, Județul Giurgiu, email: contact@magura-events.ro.</p>
             </section>
 
             <section>

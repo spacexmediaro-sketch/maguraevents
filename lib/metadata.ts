@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://magura-events.ro';
 
@@ -10,28 +10,28 @@ export const siteConfig = {
   url:         BASE_URL,
   phone:       '+40 XXX XXX XXX',
   email:       'contact@magura-events.ro',
-  address:     'Sat Măgura, Județul Buzău, România',
+  address:     'Sat Măgura, Comuna Buturugeni, Județul Giurgiu, România',
   facebook:    'https://www.facebook.com/profile.php?id=100071001438187',
   instagram:   'https://www.instagram.com/magura_events',
   tiktok:      'https://www.tiktok.com/@magura_events',
-  description: 'Măgura Events — saloane premium pentru nunți, botezuri, majorate și evenimente corporate în județul Buzău. Atmosferă de lux, meniuri rafinate, organizare impecabilă.',
+  description: 'Măgura Events — saloane premium pentru nunți, botezuri, majorate și evenimente corporate în județul Giurgiu. Atmosferă de lux, meniuri rafinate, organizare impecabilă.',
   keywords: [
-    'salon evenimente Buzău',
-    'salon nunți Buzău',
-    'salon botez Buzău',
+    'salon evenimente Giurgiu',
+    'salon nunți Giurgiu',
+    'salon botez Giurgiu',
     'sală evenimente',
     'locație nunți',
-    'restaurant nuntă Buzău',
+    'restaurant nuntă Giurgiu',
     'sală majorat',
-    'evenimente corporate Buzău',
+    'evenimente corporate Giurgiu',
     'meniu nuntă',
     'meniu botez',
     'Măgura Events',
     'nuntă elegantă',
     'botez premium',
     'organizare evenimente private',
-    'salon Crystal Buzău',
-    'salon Royal Buzău',
+    'salon Crystal Giurgiu',
+    'salon Royal Giurgiu',
   ],
 };
 

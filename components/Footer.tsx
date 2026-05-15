@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import Image from 'next/image';
 import { Facebook, Instagram, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 import { IconTikTok } from './Icons';
@@ -63,7 +63,7 @@ export default function Footer() {
             </Link>
 
             <p className="font-sans text-cream-600 text-xs mb-6" style={{ lineHeight: 1.8 }}>
-              Saloane premium pentru nunți, botezuri, majorate și evenimente corporate în județul Buzău. Rafinament, eleganță și organizare impecabilă.
+              Saloane premium pentru nunți, botezuri, majorate și evenimente corporate în județul Giurgiu. Rafinament, eleganță și organizare impecabilă.
             </p>
 
             {/* Social media — Facebook + Instagram + TikTok */}
@@ -112,14 +112,14 @@ export default function Footer() {
                 </span>
               </a>
               <a
-                href="https://maps.google.com/maps?q=Magura+Events+Buzau"
+                href="https://maps.google.com/maps?q=Magura+Events+Buturugeni+Giurgiu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 group"
               >
                 <MapPin size={12} className="text-gold-600/60 group-hover:text-gold-600 transition-colors mt-0.5 flex-shrink-0" />
                 <address className="font-sans text-xs text-cream-500 not-italic group-hover:text-cream-300 transition-colors" style={{ lineHeight: 1.6 }}>
-                  Sat Măgura,<br />Județul Buzău, România
+                  Sat Măgura,<br />județul Giurgiu, România
                 </address>
               </a>
             </div>

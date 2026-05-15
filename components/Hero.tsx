@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -196,7 +196,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="label-gold mb-6"
           >
-            ✦ Două saloane de excepție în județul Buzău ✦
+            ✦ Două saloane de excepție în județul Giurgiu ✦
           </motion.p>
 
           <motion.h1

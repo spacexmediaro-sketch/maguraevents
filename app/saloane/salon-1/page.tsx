@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { Users, Maximize2, Sparkles, CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Salon Crystal — Eleganță Clasică pentru Evenimente Memorabile',
   description:
-    'Salon Crystal — spațiu elegant de 500 m² pentru 80–250 persoane. Candelabre, lumini ambientale, pistă de dans și sistem audio profesional. Ideal pentru nunți și botezuri premium în Buzău.',
+    'Salon Crystal — spațiu elegant de 500 m² pentru 80–250 persoane. Candelabre, lumini ambientale, pistă de dans și sistem audio profesional. Ideal pentru nunți și botezuri premium în Giurgiu.',
   alternates: { canonical: 'https://magura-events.ro/saloane/salon-1' },
 };
 

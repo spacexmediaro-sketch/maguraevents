@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { IconPillar, IconProjector, IconMusic, IconStar } from '@/components/Icons';
@@ -6,8 +6,8 @@ import { IconPillar, IconProjector, IconMusic, IconStar } from '@/components/Ico
 export const metadata: Metadata = {
   title: 'Evenimente Corporate — Conferințe, Gale și Team-Building | Măgura Events',
   description:
-    'Organizăm evenimente corporate în Buzău: conferințe, team-building, gale de premiere și cine de afaceri. Sală echipată complet cu proiector, sistem audio, catering business și WiFi dedicat.',
-  keywords: ['eveniment corporate Buzău', 'conferință Buzău', 'team building Buzău', 'gală premiere', 'catering corporate'],
+    'Organizăm evenimente corporate în Giurgiu: conferințe, team-building, gale de premiere și cine de afaceri. Sală echipată complet cu proiector, sistem audio, catering business și WiFi dedicat.',
+  keywords: ['eveniment corporate Giurgiu', 'conferință Giurgiu', 'team building Giurgiu', 'gală premiere', 'catering corporate'],
   alternates: { canonical: 'https://magura-events.ro/corporate' },
 };
 

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { Users, Maximize2, Sparkles, CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Salon Royal — Grandoare pentru Evenimente de Excepție',
   description:
-    'Salon Royal — 850 m² pentru 150–450 persoane. Terasă privată, foyer separat, proiector HD și bar dedicat. Cel mai mare salon premium din zona Buzău pentru nunți grandioase.',
+    'Salon Royal — 850 m² pentru 150–450 persoane. Terasă privată, foyer separat, proiector HD și bar dedicat. Cel mai mare salon premium din zona Giurgiu pentru nunți grandioase.',
   alternates: { canonical: 'https://magura-events.ro/saloane/salon-2' },
 };
 

@@ -1,4 +1,4 @@
-import { siteConfig } from './metadata';
+﻿import { siteConfig } from './metadata';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://magura-events.ro';
 
@@ -18,8 +18,8 @@ export function localBusinessSchema() {
     address: {
       '@type':           'PostalAddress',
       streetAddress:     'Sat Măgura',
-      addressLocality:   'Buzău',
-      addressRegion:     'Buzău',
+      addressLocality:   'Buturugeni',
+      addressRegion:     'Giurgiu',
       postalCode:        'XXXXXX',
       addressCountry:    'RO',
     },

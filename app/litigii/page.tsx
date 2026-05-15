@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 import { ExternalLink } from 'lucide-react';
 
@@ -84,7 +84,7 @@ export default function LitigiiPage() {
               <h2 className="font-serif text-xl text-cream-200 mb-3">Contact pentru reclamații</h2>
               <div className="card-luxury p-5">
                 <p className="text-sm text-cream-300 mb-1 font-medium">AGRO & FISHING MAGURA SRL</p>
-                <p className="text-xs text-cream-500">Sat Măgura, Județul Buzău, România</p>
+                <p className="text-xs text-cream-500">Sat Măgura, Comuna Buturugeni, Județul Giurgiu, România</p>
                 <p className="text-xs text-cream-500 mt-1">
                   Email:{' '}
                   <a href="mailto:contact@magura-events.ro" className="text-gold-600 underline">

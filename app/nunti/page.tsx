@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Image from 'next/image';
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { Heart, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Nunți — Organizare Premium în Salon de Lux | Măgura Events Buzău',
+  title: 'Nunți — Organizare Premium în Salon de Lux | Măgura Events Giurgiu',
   description:
-    'Organizăm nunți de vis în saloanele Crystal și Royal din Buzău. Decor floral, meniu rafinat, sistem audio-video, coordonator eveniment și toate serviciile pentru ziua cea mai importantă din viața ta.',
-  keywords: ['nuntă Buzău', 'salon nunți Buzău', 'organizare nuntă', 'restaurant nuntă Buzău', 'nuntă elegantă', 'meniu nuntă'],
+    'Organizăm nunți de vis în saloanele Crystal și Royal din Giurgiu. Decor floral, meniu rafinat, sistem audio-video, coordonator eveniment și toate serviciile pentru ziua cea mai importantă din viața ta.',
+  keywords: ['nuntă Giurgiu', 'salon nunți Giurgiu', 'organizare nuntă', 'restaurant nuntă Giurgiu', 'nuntă elegantă', 'meniu nuntă'],
   alternates: { canonical: 'https://magura-events.ro/nunti' },
 };
 

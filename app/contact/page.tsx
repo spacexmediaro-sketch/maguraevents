@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Phone, Mail, MapPin, Facebook, Instagram, Clock } from 'lucide-react';
@@ -87,7 +87,7 @@ export default function ContactPage() {
                         <p className="font-sans text-xs tracking-widest uppercase text-gold-600/60 mb-1">Adresă</p>
                         <address className="font-serif text-xl text-cream-200 not-italic" style={{ lineHeight: 1.4 }}>
                           Sat Măgura<br />
-                          Județul Buzău
+                          județul Giurgiu
                         </address>
                         <a
                           href="https://share.google/cdgA7UY1kWbB499qv"
@@ -175,7 +175,7 @@ export default function ContactPage() {
       {/* Map */}
       <div className="h-96 border-t border-gold-600/10">
         <iframe
-          src="https://maps.google.com/maps?q=Magura+Events+Buzau+Romania&output=embed&hl=ro&z=15"
+          src="https://maps.google.com/maps?q=Magura+Events+Buturugeni+Giurgiu+Romania&output=embed&hl=ro&z=15"
           width="100%"
           height="100%"
           style={{ border: 0, filter: 'grayscale(75%) invert(88%) hue-rotate(180deg)' }}

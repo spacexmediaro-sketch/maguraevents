@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Reviews from '@/components/Reviews';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Recenzii Clienți — Ce Spun Oamenii despre Măgura Events',
   description:
-    'Recenzii reale de la clienții Măgura Events. Descoperă experiențele familiilor care au ales saloanele noastre premium pentru nunți, botezuri și majorate în județul Buzău.',
+    'Recenzii reale de la clienții Măgura Events. Descoperă experiențele familiilor care au ales saloanele noastre premium pentru nunți, botezuri și majorate în județul Giurgiu.',
   alternates: { canonical: 'https://magura-events.ro/recenzii' },
 };
 

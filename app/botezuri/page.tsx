@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
@@ -7,8 +7,8 @@ import { IconDove } from '@/components/Icons';
 export const metadata: Metadata = {
   title: 'Botezuri — Salon Premium pentru Botezul Copilului Tău | Măgura Events',
   description:
-    'Organizăm botezuri elegante în saloanele premium Măgura Events din Buzău. Decor tematic, meniu botez rafinat, tort personalizat și animator pentru copii.',
-  keywords: ['botez Buzău', 'salon botez', 'organizare botez', 'meniu botez', 'botez premium'],
+    'Organizăm botezuri elegante în saloanele premium Măgura Events din Giurgiu. Decor tematic, meniu botez rafinat, tort personalizat și animator pentru copii.',
+  keywords: ['botez Giurgiu', 'salon botez', 'organizare botez', 'meniu botez', 'botez premium'],
   alternates: { canonical: 'https://magura-events.ro/botezuri' },
 };
 

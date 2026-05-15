@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: 'Cum ajung la Măgura Events?',
-    answer:   'Suntem situați în sat Măgura, județul Buzău. Accesul este ușor cu mașina, iar coordonatele GPS sunt disponibile în secțiunea Contact de pe site. Puteți vizualiza locația și pe Google Maps.',
+    answer:   'Suntem situați în Sat Măgura, Comuna Buturugeni, Județul Giurgiu. Accesul este ușor cu mașina, iar coordonatele GPS sunt disponibile în secțiunea Contact de pe site. Puteți vizualiza locația și pe Google Maps.',
   },
   {
     question: 'Pot programa o vizionare a salonului înainte de rezervare?',

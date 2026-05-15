@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import SalonShowcase from '@/components/SalonShowcase';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Saloane Evenimente Premium — Salon Crystal și Salon Royal',
   description:
-    'Descoperă cele două saloane Măgura Events: Salon Crystal (80–250 persoane) și Salon Royal (150–450 persoane). Spații elegante pentru nunți, botezuri, majorate și corporate în Buzău.',
+    'Descoperă cele două saloane Măgura Events: Salon Crystal (80–250 persoane) și Salon Royal (150–450 persoane). Spații elegante pentru nunți, botezuri, majorate și corporate în Giurgiu.',
   alternates: { canonical: 'https://magura-events.ro/saloane' },
 };
 

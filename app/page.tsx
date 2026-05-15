@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import SalonShowcase from '@/components/SalonShowcase';
 import EventTypes from '@/components/EventTypes';
@@ -12,17 +12,17 @@ import { MapPin, Phone, Clock, Facebook, Instagram } from 'lucide-react';
 import { IconTikTok } from '@/components/Icons';
 
 export const metadata: Metadata = {
-  title: 'Măgura Events — Saloane Premium pentru Evenimente Memorabile în Buzău',
+  title: 'Măgura Events — Saloane Premium pentru Evenimente Memorabile în Giurgiu',
   description:
-    'Măgura Events — două saloane de excepție pentru nunți, botezuri, majorate și corporate în județul Buzău. Salon Crystal (250 pers.) și Salon Royal (450 pers.). Meniuri proprii, decor premium, organizare completă.',
+    'Măgura Events — două saloane de excepție pentru nunți, botezuri, majorate și corporate în județul Giurgiu. Salon Crystal (250 pers.) și Salon Royal (450 pers.). Meniuri proprii, decor premium, organizare completă.',
   keywords: [
-    'salon evenimente Buzău',
-    'salon nunți Buzău',
-    'salon botez Buzău',
+    'salon evenimente Giurgiu',
+    'salon nunți Giurgiu',
+    'salon botez Giurgiu',
     'Măgura Events',
-    'sală nuntă Buzău',
+    'sală nuntă Giurgiu',
     'locație evenimente premium',
-    'restaurant nuntă Buzău',
+    'restaurant nuntă Giurgiu',
     'salon majorate',
   ],
   alternates: { canonical: 'https://magura-events.ro' },
@@ -148,7 +148,7 @@ function MapSection() {
             <p className="label-gold mb-4">✦ Locație ✦</p>
             <h2 className="heading-md text-cream-200 mb-6">
               Găsiți-ne în inima{' '}
-              <span className="text-gold-gradient italic">județului Buzău</span>
+              <span className="text-gold-gradient italic">Buturugeni, Giurgiu</span>
             </h2>
             <div className="space-y-5">
               <div className="flex items-start gap-4">
@@ -158,7 +158,7 @@ function MapSection() {
                 <div>
                   <p className="font-sans text-xs tracking-widest uppercase text-gold-600/70 mb-1">Adresă</p>
                   <address className="font-sans text-cream-300 text-sm not-italic" style={{ lineHeight: 1.7 }}>
-                    Sat Măgura, Județul Buzău<br />România
+                    Sat Măgura, Comuna Buturugeni, Județul Giurgiu<br />România
                   </address>
                 </div>
               </div>
@@ -197,7 +197,7 @@ function MapSection() {
           <AnimatedSection direction="right" delay={0.2}>
             <div className="relative border border-gold-600/20 overflow-hidden" style={{ height: '380px' }}>
               <iframe
-                src="https://maps.google.com/maps?q=Magura+Events+Buzau+Romania&output=embed&hl=ro&z=14"
+                src="https://maps.google.com/maps?q=Magura+Events+Buturugeni+Giurgiu+Romania&output=embed&hl=ro&z=14"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'grayscale(75%) invert(88%) hue-rotate(180deg)' }}
@@ -205,7 +205,7 @@ function MapSection() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Locație Măgura Events pe Google Maps"
-                aria-label="Hartă Google Maps cu locația Măgura Events în județul Buzău"
+                aria-label="Hartă Google Maps cu locația Măgura Events în județul Giurgiu"
               />
               <div
                 className="absolute inset-0 pointer-events-none"

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import MenuSection from '@/components/MenuSection';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Meniuri Evenimente — Gastronomie de Excepție | Măgura Events',
   description:
     'Descoperă meniurile premium Măgura Events: meniu nuntă, meniu botez, meniu majorat și meniu corporate. Preparate proaspete, gătite în bucătăria proprie de chef-ul nostru.',
-  keywords: ['meniu nuntă', 'meniu botez', 'meniu majorat', 'meniu corporate', 'catering evenimente Buzău'],
+  keywords: ['meniu nuntă', 'meniu botez', 'meniu majorat', 'meniu corporate', 'catering evenimente Giurgiu'],
   alternates: { canonical: 'https://magura-events.ro/meniuri' },
 };
 

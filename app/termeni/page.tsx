@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function TermeniPage() {
           <div className="prose prose-invert max-w-none space-y-8 font-sans text-sm text-cream-500" style={{ lineHeight: 1.9 }}>
             <section>
               <h2 className="font-serif text-xl text-cream-200 mb-3">1. Părțile contractante</h2>
-              <p>Prezentele Termeni și Condiții reglementează relația dintre <strong className="text-cream-300">AGRO & FISHING MAGURA SRL</strong>, cu sediul în Sat Măgura, Județul Buzău, CUI 29032418, Nr. Reg. Com. J2011000564520 (denumit în continuare „Prestator"), și orice persoană fizică sau juridică care accesează site-ul magura-events.ro sau solicită servicii de organizare evenimente (denumit în continuare „Client").</p>
+              <p>Prezentele Termeni și Condiții reglementează relația dintre <strong className="text-cream-300">AGRO & FISHING MAGURA SRL</strong>, cu sediul în Sat Măgura, Comuna Buturugeni, Județul Giurgiu, CUI 29032418, Nr. Reg. Com. J2011000564520 (denumit în continuare „Prestator"), și orice persoană fizică sau juridică care accesează site-ul magura-events.ro sau solicită servicii de organizare evenimente (denumit în continuare „Client").</p>
             </section>
 
             <section>
@@ -85,7 +85,7 @@ export default function TermeniPage() {
 
             <section>
               <h2 className="font-serif text-xl text-cream-200 mb-3">10. Contact</h2>
-              <p>Pentru orice întrebări legate de acești Termeni și Condiții, ne puteți contacta la: <a href="mailto:contact@magura-events.ro" className="text-gold-600 underline">contact@magura-events.ro</a> sau la adresa societății din Sat Măgura, Județul Buzău.</p>
+              <p>Pentru orice întrebări legate de acești Termeni și Condiții, ne puteți contacta la: <a href="mailto:contact@magura-events.ro" className="text-gold-600 underline">contact@magura-events.ro</a> sau la adresa societății din Sat Măgura, Comuna Buturugeni, Județul Giurgiu.</p>
             </section>
           </div>
         </AnimatedSection>

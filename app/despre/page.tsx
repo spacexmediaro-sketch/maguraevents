@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Image from 'next/image';
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { Heart, Award, Users, Star } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Despre Măgura Events — Povestea noastră',
   description:
-    'Descoperă povestea Măgura Events — brand de evenimente premium fondat în 2011 în județul Buzău. Peste 10 ani de experiență în organizarea celor mai frumoase nunți, botezuri și majorate.',
+    'Descoperă povestea Măgura Events — brand de evenimente premium fondat în 2011 în județul Giurgiu. Peste 10 ani de experiență în organizarea celor mai frumoase nunți, botezuri și majorate.',
   alternates: { canonical: 'https://magura-events.ro/despre' },
 };
 
@@ -104,7 +104,7 @@ export default function DesprePage() {
               </h2>
               <div className="space-y-4 font-sans text-cream-500 text-sm" style={{ lineHeight: 1.9 }}>
                 <p>
-                  Măgura Events a luat naștere în 2011 din dorința de a oferi familiilor din județul Buzău un spațiu de excepție pentru cele mai importante momente ale vieții lor.
+                  Măgura Events a luat naștere în 2011 din dorința de a oferi familiilor din județul Giurgiu un spațiu de excepție pentru cele mai importante momente ale vieții lor.
                 </p>
                 <p>
                   De-a lungul anilor, am transformat zeci de vise în realitate — nunți de basm, botezuri delicate, majorate spectaculoase și evenimente corporate de impact. Fiecare eveniment ne-a îmbogățit experiența și ne-a confirmat că pasiunea pentru organizare este cea mai puternică resursă a noastră.
@@ -159,7 +159,7 @@ export default function DesprePage() {
                   ['Nr. Reg. Com.',   'J2011000564520'],
                   ['EUID',            'ROONRC.J2011000564520'],
                   ['Data înființare', '25 August 2011'],
-                  ['Sediu social',    'Sat Măgura, Județul Buzău'],
+                  ['Sediu social',    'Sat Măgura, Comuna Buturugeni, Județul Giurgiu'],
                 ].map(([label, value]) => (
                   <div key={label}>
                     <dt className="font-sans text-xs tracking-widest uppercase text-gold-600/60 mb-1">{label}</dt>

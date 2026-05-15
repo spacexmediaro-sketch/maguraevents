@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { Star, Quote } from 'lucide-react';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
@@ -101,7 +101,7 @@ export default function Reviews() {
               Vedeți toate recenziile noastre pe Google Business
             </p>
             <a
-              href="https://www.google.com/search?q=Magura+Events+Buzau"
+              href="https://www.google.com/search?q=Magura+Events+Buturugeni+Giurgiu"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline-gold text-xs px-6 py-3"

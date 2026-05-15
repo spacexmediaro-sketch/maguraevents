@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { IconCake, IconDecor, IconCamera, IconStar, IconMic, IconPhotobox } from '@/components/Icons';
@@ -6,10 +6,10 @@ import type { ComponentType } from 'react';
 import type { IconProps } from '@/components/Icons';
 
 export const metadata: Metadata = {
-  title: 'Zile de Naștere — Aniversare Premium | Măgura Events Buzău',
+  title: 'Zile de Naștere — Aniversare Premium | Măgura Events Giurgiu',
   description:
-    'Organizăm aniversări și zile de naștere în saloane premium în Buzău. De la petreceri intime la aniversări grandioase — decoruri tematice, meniuri personalizate și surprize speciale.',
-  keywords: ['zi de naștere Buzău', 'aniversare Buzău', 'petrecere zi nastere', 'organizare aniversare'],
+    'Organizăm aniversări și zile de naștere în saloane premium în Giurgiu. De la petreceri intime la aniversări grandioase — decoruri tematice, meniuri personalizate și surprize speciale.',
+  keywords: ['zi de naștere Giurgiu', 'aniversare Giurgiu', 'petrecere zi nastere', 'organizare aniversare'],
   alternates: { canonical: 'https://magura-events.ro/zile-nastere' },
 };
 
