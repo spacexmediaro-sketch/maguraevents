@@ -28,7 +28,7 @@ export default function BotezuriPage() {
       <section
         className="pt-40 pb-24 relative"
         style={{
-          background: `radial-gradient(ellipse 60% 60% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%), #080808`,
+          background: `radial-gradient(ellipse 60% 60% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%), #FAFAF7`,
         }}
       >
         <div className="container-luxury text-center">
@@ -51,7 +51,7 @@ export default function BotezuriPage() {
         </div>
       </section>
 
-      <section className="section-padding" style={{ background: '#0a0a0a' }}>
+      <section className="section-padding" style={{ background: '#F5F2EB' }}>
         <div className="container-luxury max-w-4xl">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {[

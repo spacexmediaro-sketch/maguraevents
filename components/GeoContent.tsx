@@ -17,7 +17,7 @@ export default function GeoContent() {
   return (
     <section
       className="section-padding border-t border-gold-600/10"
-      style={{ background: '#060605' }}
+      style={{ background: '#F0EDE6' }}
       aria-label="Zona de acoperire Măgura Events"
     >
       <div className="container-luxury">

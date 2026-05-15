@@ -19,7 +19,7 @@ export default function ContactPage() {
       <section
         className="pt-40 pb-16 relative"
         style={{
-          background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%), #080808`,
+          background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%), #FAFAF7`,
         }}
       >
         <div className="container-luxury text-center">
@@ -38,7 +38,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact content */}
-      <section className="section-padding" style={{ background: '#080808' }}>
+      <section className="section-padding" style={{ background: '#FAFAF7' }}>
         <div className="container-luxury">
           <div className="grid lg:grid-cols-5 gap-12 xl:gap-16">
             {/* Contact info */}

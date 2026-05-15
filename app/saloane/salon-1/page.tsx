@@ -17,7 +17,7 @@ export default function SalonCrystalPage() {
       {/* Hero */}
       <section
         className="pt-40 pb-0 relative"
-        style={{ background: '#080808' }}
+        style={{ background: '#FAFAF7' }}
       >
         <div className="container-luxury">
           <AnimatedSection>
@@ -55,7 +55,7 @@ export default function SalonCrystalPage() {
       </section>
 
       {/* Main content */}
-      <section className="section-padding" style={{ background: '#080808' }}>
+      <section className="section-padding" style={{ background: '#FAFAF7' }}>
         <div className="container-luxury">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Description */}
@@ -149,7 +149,7 @@ export default function SalonCrystalPage() {
       </section>
 
       {/* Other salon CTA */}
-      <section className="py-16 border-t border-gold-600/10" style={{ background: '#0a0a0a' }}>
+      <section className="py-16 border-t border-gold-600/10" style={{ background: '#F5F2EB' }}>
         <div className="container-luxury text-center">
           <AnimatedSection>
             <p className="font-sans text-cream-500 text-sm mb-6">

@@ -81,7 +81,7 @@ const events: {
 
 export default function EventTypes() {
   return (
-    <section className="section-padding relative" style={{ background: '#0a0a0a' }}>
+    <section className="section-padding relative" style={{ background: '#F5F2EB' }}>
       <div className="container-luxury">
         <AnimatedSection className="text-center mb-16">
           <p className="label-gold mb-4">✦ Tipuri de evenimente ✦</p>

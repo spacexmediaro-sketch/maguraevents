@@ -92,7 +92,7 @@ function StatsBar() {
   return (
     <div
       className="border-y border-gold-600/15 py-10"
-      style={{ background: '#0c0b09' }}
+      style={{ background: '#F7F4EE' }}
     >
       <div className="container-luxury">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
@@ -123,7 +123,7 @@ function CtaBanner() {
       style={{
         background: `
           radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 60%),
-          linear-gradient(180deg, #0a0805 0%, #080808 100%)
+          linear-gradient(180deg, #0a0805 0%, #FAFAF7 100%)
         `,
       }}
     >
@@ -157,7 +157,7 @@ function CtaBanner() {
 
 function MapSection() {
   return (
-    <section className="section-padding-sm border-t border-gold-600/10" style={{ background: '#080808' }}>
+    <section className="section-padding-sm border-t border-gold-600/10" style={{ background: '#FAFAF7' }}>
       <div className="container-luxury">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Info */}
@@ -227,7 +227,7 @@ function MapSection() {
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  boxShadow: 'inset 0 0 40px rgba(8,8,8,0.6)',
+                  boxShadow: 'inset 0 0 40px rgba(250,250,247,0.6)',
                   border: '1px solid rgba(201,168,76,0.2)',
                 }}
               />

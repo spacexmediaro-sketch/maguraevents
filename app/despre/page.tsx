@@ -43,7 +43,7 @@ export default function DesprePage() {
         style={{
           background: `
             radial-gradient(ellipse 60% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%),
-            #080808
+            #FAFAF7
           `,
         }}
       >
@@ -63,7 +63,7 @@ export default function DesprePage() {
       </section>
 
       {/* Story section */}
-      <section className="section-padding" style={{ background: '#0a0a0a' }}>
+      <section className="section-padding" style={{ background: '#F5F2EB' }}>
         <div className="container-luxury">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
@@ -122,7 +122,7 @@ export default function DesprePage() {
       </section>
 
       {/* Valori */}
-      <section className="section-padding" style={{ background: '#080808' }}>
+      <section className="section-padding" style={{ background: '#FAFAF7' }}>
         <div className="container-luxury">
           <AnimatedSection className="text-center mb-14">
             <p className="label-gold mb-4">✦ Valorile noastre ✦</p>
@@ -146,7 +146,7 @@ export default function DesprePage() {
       </section>
 
       {/* Company info */}
-      <section className="section-padding-sm border-t border-gold-600/10" style={{ background: '#0a0a0a' }}>
+      <section className="section-padding-sm border-t border-gold-600/10" style={{ background: '#F5F2EB' }}>
         <div className="container-luxury max-w-3xl text-center">
           <AnimatedSection>
             <p className="label-gold mb-4">✦ Date firmă ✦</p>

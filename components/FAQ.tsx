@@ -54,7 +54,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="section-padding" style={{ background: '#0a0a0a' }}>
+    <section className="section-padding" style={{ background: '#F5F2EB' }}>
       <JsonLd data={faqSchema(faqs)} />
 
       <div className="container-luxury max-w-4xl">
@@ -79,7 +79,7 @@ export default function FAQ() {
                     ? 'border-gold-600/40 bg-gold-600/3'
                     : 'border-gold-600/10 hover:border-gold-600/25'
                 }`}
-                style={{ background: openIndex === i ? 'rgba(201,168,76,0.025)' : '#141414' }}
+                style={{ background: openIndex === i ? 'rgba(201,168,76,0.025)' : '#FFFFFF' }}
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}

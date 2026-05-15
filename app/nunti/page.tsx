@@ -49,7 +49,7 @@ export default function NuntiPage() {
         style={{
           background: `
             radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.14) 0%, transparent 60%),
-            #080808
+            #FAFAF7
           `,
         }}
       >
@@ -72,7 +72,7 @@ export default function NuntiPage() {
       </section>
 
       {/* Content */}
-      <section className="section-padding" style={{ background: '#0a0a0a' }}>
+      <section className="section-padding" style={{ background: '#F5F2EB' }}>
         <div className="container-luxury">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <AnimatedSection direction="left">
@@ -153,7 +153,7 @@ export default function NuntiPage() {
       <EventGallery photos={weddingPhotos} />
 
       {/* CTA */}
-      <section className="py-20 border-t border-gold-600/10 text-center" style={{ background: '#080808' }}>
+      <section className="py-20 border-t border-gold-600/10 text-center" style={{ background: '#FAFAF7' }}>
         <div className="container-luxury">
           <AnimatedSection>
             <p className="label-gold mb-4">✦ Rezervați data voastră ✦</p>

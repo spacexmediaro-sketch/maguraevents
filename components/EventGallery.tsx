@@ -26,7 +26,7 @@ export default function EventGallery({ photos }: { photos: EventPhoto[] }) {
   }, [lightbox, prev, next, close]);
 
   return (
-    <section className="section-padding" style={{ background: '#080808' }}>
+    <section className="section-padding" style={{ background: '#FAFAF7' }}>
       <div className="container-luxury">
         <AnimatedSection className="text-center mb-10">
           <p className="label-gold mb-3">✦ Galerie foto ✦</p>

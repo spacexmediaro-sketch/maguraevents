@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function GdprPage() {
   return (
-    <section className="pt-40 pb-24" style={{ background: '#080808' }}>
+    <section className="pt-40 pb-24" style={{ background: '#FAFAF7' }}>
       <div className="container-luxury max-w-3xl">
         <AnimatedSection>
           <p className="label-gold mb-4">✦ Legal ✦</p>

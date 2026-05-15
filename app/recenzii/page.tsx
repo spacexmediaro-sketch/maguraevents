@@ -16,7 +16,7 @@ export default function RecenziiPage() {
       <section
         className="pt-40 pb-16 relative"
         style={{
-          background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%), #080808`,
+          background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%), #FAFAF7`,
         }}
       >
         <div className="container-luxury text-center">
@@ -36,7 +36,7 @@ export default function RecenziiPage() {
 
       <Reviews />
 
-      <section className="py-16 border-t border-gold-600/10 text-center" style={{ background: '#0a0a0a' }}>
+      <section className="py-16 border-t border-gold-600/10 text-center" style={{ background: '#F5F2EB' }}>
         <div className="container-luxury">
           <AnimatedSection>
             <p className="font-sans text-cream-500 text-sm mb-6">

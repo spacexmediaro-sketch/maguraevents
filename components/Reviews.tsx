@@ -45,7 +45,7 @@ function StarRating({ count }: { count: number }) {
 
 export default function Reviews() {
   return (
-    <section className="section-padding" style={{ background: '#080808' }}>
+    <section className="section-padding" style={{ background: '#FAFAF7' }}>
       <div className="container-luxury">
         {/* Header */}
         <AnimatedSection className="text-center mb-16">

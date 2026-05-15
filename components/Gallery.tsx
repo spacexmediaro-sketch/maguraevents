@@ -388,7 +388,7 @@ export default function Gallery({ preview = false }: { preview?: boolean }) {
     [displayItems.length]);
 
   return (
-    <section className={`${preview ? 'section-padding' : 'pt-36 pb-20'} relative`} style={{ background: '#080808' }}>
+    <section className={`${preview ? 'section-padding' : 'pt-36 pb-20'} relative`} style={{ background: '#FAFAF7' }}>
       <div className="container-luxury">
         {preview ? (
           <AnimatedSection className="text-center mb-12">

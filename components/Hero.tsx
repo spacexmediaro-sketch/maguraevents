@@ -71,7 +71,7 @@ export default function Hero() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
             className="fixed inset-0 z-50 flex flex-col items-center justify-center"
-            style={{ background: '#040404' }}
+            style={{ background: '#ECEAE3' }}
             aria-hidden="true"
           >
             <div className="absolute rounded-full opacity-15 blur-[120px]" style={{ width: '50vw', height: '50vw', background: 'radial-gradient(circle, #C9A84C 0%, transparent 70%)', top: '10%', left: '20%', animation: 'float 4s ease-in-out infinite' }} />
@@ -158,7 +158,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 z-10"
           style={{
-            background: 'linear-gradient(180deg, rgba(8,8,8,0.45) 0%, rgba(8,8,8,0.3) 40%, rgba(8,8,8,0.75) 80%, rgba(8,8,8,0.97) 100%)',
+            background: 'linear-gradient(180deg, rgba(250,250,247,0.45) 0%, rgba(250,250,247,0.3) 40%, rgba(250,250,247,0.75) 80%, rgba(250,250,247,0.97) 100%)',
           }}
         />
 

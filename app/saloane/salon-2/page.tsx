@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function SalonRoyalPage() {
   return (
     <>
-      <section className="pt-40 pb-0 relative" style={{ background: '#080808' }}>
+      <section className="pt-40 pb-0 relative" style={{ background: '#FAFAF7' }}>
         <div className="container-luxury">
           <AnimatedSection>
             <nav aria-label="Breadcrumb" className="mb-8">
@@ -50,7 +50,7 @@ export default function SalonRoyalPage() {
         </div>
       </section>
 
-      <section className="section-padding" style={{ background: '#080808' }}>
+      <section className="section-padding" style={{ background: '#FAFAF7' }}>
         <div className="container-luxury">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
@@ -141,7 +141,7 @@ export default function SalonRoyalPage() {
         </div>
       </section>
 
-      <section className="py-16 border-t border-gold-600/10" style={{ background: '#0a0a0a' }}>
+      <section className="py-16 border-t border-gold-600/10" style={{ background: '#F5F2EB' }}>
         <div className="container-luxury text-center">
           <AnimatedSection>
             <p className="font-sans text-cream-500 text-sm mb-6">

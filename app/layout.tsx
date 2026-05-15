@@ -65,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="ro" className={`${cormorant.variable} ${montserrat.variable}`}>
       <head>
-        <meta name="theme-color" content="#080808" />
+        <meta name="theme-color" content="#FAFAF7" />
         <meta name="color-scheme" content="dark" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
