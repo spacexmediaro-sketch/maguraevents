@@ -44,6 +44,8 @@ export function localBusinessSchema() {
     ],
     sameAs: [
       siteConfig.facebook,
+      siteConfig.instagram,
+      siteConfig.tiktok,
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

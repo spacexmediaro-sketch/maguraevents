@@ -8,7 +8,8 @@ import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
-import { MapPin, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock, Facebook, Instagram } from 'lucide-react';
+import { IconTikTok } from '@/components/Icons';
 
 export const metadata: Metadata = {
   title: 'Măgura Events — Saloane Premium pentru Evenimente Memorabile în Buzău',
@@ -196,10 +197,10 @@ function MapSection() {
           <AnimatedSection direction="right" delay={0.2}>
             <div className="relative border border-gold-600/20 overflow-hidden" style={{ height: '380px' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91516.57!2d26.8!3d45.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zTcSDZ3VyYSBFdmVudHM!5e0!3m2!1sro!2sro!4v1"
+                src="https://maps.google.com/maps?q=Magura+Events+Buzau+Romania&output=embed&hl=ro&z=14"
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: 'grayscale(80%) invert(90%) hue-rotate(180deg)' }}
+                style={{ border: 0, filter: 'grayscale(75%) invert(88%) hue-rotate(180deg)' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -224,6 +225,20 @@ function MapSection() {
                 Deschide în Google Maps →
               </a>
             </p>
+
+            {/* Social media */}
+            <div className="flex items-center justify-center gap-4 mt-5 pt-5 border-t border-gold-600/10">
+              <span className="font-sans text-xs text-cream-700 tracking-widest uppercase">Urmărește-ne</span>
+              <a href="https://www.facebook.com/profile.php?id=100071001438187" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 border border-gold-600/20 flex items-center justify-center text-cream-500 hover:text-gold-600 hover:border-gold-600/50 transition-all duration-300">
+                <Facebook size={14} />
+              </a>
+              <a href="https://www.instagram.com/magura_events" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 border border-gold-600/20 flex items-center justify-center text-cream-500 hover:text-gold-600 hover:border-gold-600/50 transition-all duration-300">
+                <Instagram size={14} />
+              </a>
+              <a href="https://www.tiktok.com/@magura_events" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-9 h-9 border border-gold-600/20 flex items-center justify-center text-cream-500 hover:text-gold-600 hover:border-gold-600/50 transition-all duration-300">
+                <IconTikTok size={14} color="currentColor" />
+              </a>
+            </div>
           </AnimatedSection>
         </div>
       </div>

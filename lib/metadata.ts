@@ -12,6 +12,8 @@ export const siteConfig = {
   email:       'contact@magura-events.ro',
   address:     'Sat Măgura, Județul Buzău, România',
   facebook:    'https://www.facebook.com/profile.php?id=100071001438187',
+  instagram:   'https://www.instagram.com/magura_events',
+  tiktok:      'https://www.tiktok.com/@magura_events',
   description: 'Măgura Events — saloane premium pentru nunți, botezuri, majorate și evenimente corporate în județul Buzău. Atmosferă de lux, meniuri rafinate, organizare impecabilă.',
   keywords: [
     'salon evenimente Buzău',

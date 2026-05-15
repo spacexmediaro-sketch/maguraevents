@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
+import { IconCake, IconDecor, IconCamera, IconStar, IconMic, IconPhotobox } from '@/components/Icons';
+import type { ComponentType } from 'react';
+import type { IconProps } from '@/components/Icons';
 
 export const metadata: Metadata = {
   title: 'Zile de Naștere — Aniversare Premium | Măgura Events Buzău',
@@ -9,6 +12,15 @@ export const metadata: Metadata = {
   keywords: ['zi de naștere Buzău', 'aniversare Buzău', 'petrecere zi nastere', 'organizare aniversare'],
   alternates: { canonical: 'https://magura-events.ro/zile-nastere' },
 };
+
+const features: { Icon: ComponentType<IconProps>; title: string; desc: string }[] = [
+  { Icon: IconDecor,    title: 'Decor tematic personalizat', desc: 'Orice temă îți dorești — de la glam și auriu la rustic, boho sau tematici specifice.' },
+  { Icon: IconCake,     title: 'Tort de aniversare spectaculos', desc: 'Torturi create de cofetarul nostru, personalizate în funcție de vârstă și preferințe.' },
+  { Icon: IconPhotobox, title: 'Photobox premium', desc: 'Colțișor foto cu props, fundal tematic și imprimare foto instant pentru invitați.' },
+  { Icon: IconStar,     title: 'Surprize și momente speciale', desc: 'Intrări surprise, confetti cannons, baloane LED și momente orchestrate perfect.' },
+  { Icon: IconCamera,   title: 'Meniu personalizat', desc: 'Meniu adaptat preferințelor gastronomice și numărului de invitați.' },
+  { Icon: IconMic,      title: 'DJ sau Muzică live', desc: 'Muzica perfectă pentru fiecare moment al petrecerii, de la cocktail la finala nopții.' },
+];
 
 export default function ZileNasterePage() {
   return (
@@ -21,7 +33,11 @@ export default function ZileNasterePage() {
       >
         <div className="container-luxury text-center">
           <AnimatedSection>
-            <p style={{ fontSize: '2.5rem' }} className="mb-4" role="img" aria-label="Zi de nastere">🎂</p>
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 border border-gold-600/30 flex items-center justify-center">
+                <IconCake size={30} color="#C9A84C" strokeWidth={1.2} />
+              </div>
+            </div>
             <p className="label-gold mb-4">✦ Sărbătorire premium ✦</p>
             <h1 className="heading-xl text-cream-200 mb-6">
               Zile de naștere{' '}
@@ -38,20 +54,15 @@ export default function ZileNasterePage() {
       <section className="section-padding" style={{ background: '#0a0a0a' }}>
         <div className="container-luxury max-w-4xl">
           <div className="grid sm:grid-cols-2 gap-6 mb-12">
-            {[
-              { emoji: '🎨', title: 'Decor tematic personalizat', desc: 'Orice temă îți dorești — de la glam și auriu la rustic, boho sau tematici specifice.' },
-              { emoji: '🍰', title: 'Tort de aniversare spectaculos', desc: 'Torturi create de cofetarul nostru, personalizate în funcție de vârsta și preferințele aniversatei/ului.' },
-              { emoji: '📷', title: 'Photobox premium', desc: 'Colțișor foto cu props, fundal tematic și imprimare foto instant pentru invitați.' },
-              { emoji: '🎁', title: 'Surprize și momente speciale', desc: 'Intrări surprise, confetti cannons, baloane LED și momente orchestrate perfect.' },
-              { emoji: '🍽️', title: 'Meniu personalizat', desc: 'Meniu adaptat preferințelor gastronomice și numărului de invitați.' },
-              { emoji: '🎤', title: 'DJ sau Muzică live', desc: 'Muzica perfectă pentru fiecare moment al petrecerii, de la cocktail la finala nopții.' },
-            ].map((item) => (
-              <AnimatedSection key={item.title}>
-                <div className="card-luxury p-6 flex gap-4">
-                  <span style={{ fontSize: '1.8rem' }} className="flex-shrink-0" role="img" aria-label={item.title}>{item.emoji}</span>
+            {features.map(({ Icon, title, desc }) => (
+              <AnimatedSection key={title}>
+                <div className="card-luxury p-6 flex gap-5 h-full">
+                  <div className="w-12 h-12 border border-gold-600/25 flex items-center justify-center flex-shrink-0">
+                    <Icon size={22} color="#C9A84C" strokeWidth={1.3} />
+                  </div>
                   <div>
-                    <h3 className="font-serif text-lg text-cream-100 mb-2">{item.title}</h3>
-                    <p className="font-sans text-xs text-cream-500" style={{ lineHeight: 1.75 }}>{item.desc}</p>
+                    <h3 className="font-serif text-lg text-cream-100 mb-2">{title}</h3>
+                    <p className="font-sans text-xs text-cream-500" style={{ lineHeight: 1.75 }}>{desc}</p>
                   </div>
                 </div>
               </AnimatedSection>

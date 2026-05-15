@@ -1,63 +1,81 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
+import {
+  IconRing,
+  IconDove,
+  IconCrown,
+  IconCake,
+  IconPillar,
+  IconDiamond,
+  type IconProps,
+} from './Icons';
 
-const events = [
+type EventIcon = React.ComponentType<IconProps>;
+
+const events: {
+  Icon:        EventIcon;
+  title:       string;
+  subtitle:    string;
+  href:        string;
+  description: string;
+  tags:        string[];
+  gradient:    string;
+}[] = [
   {
-    emoji:    '💍',
-    title:    'Nunți',
-    subtitle: 'Ziua perfectă',
-    href:     '/nunti',
+    Icon:        IconRing,
+    title:       'Nunți',
+    subtitle:    'Ziua perfectă',
+    href:        '/nunti',
     description: 'Transformăm povestea voastră de iubire în cel mai memorabil eveniment al vieții. De la decoruri impresionante la meniuri rafinate.',
-    tags:     ['Florărie inclusă', 'Tort nuptial', 'Muzică live'],
-    gradient: 'from-[#C9A84C]/10 via-transparent to-transparent',
+    tags:        ['Florărie inclusă', 'Tort nupțial', 'Muzică live'],
+    gradient:    'from-[#C9A84C]/10 via-transparent to-transparent',
   },
   {
-    emoji:    '🍼',
-    title:    'Botezuri',
-    subtitle: 'Primul pas în lume',
-    href:     '/botezuri',
+    Icon:        IconDove,
+    title:       'Botezuri',
+    subtitle:    'Primul pas în lume',
+    href:        '/botezuri',
     description: 'Celebrăm venirea pe lume a micuțului cu o atmosferă caldă, delicată și organizată perfect pentru micii invitați și părinții lor.',
-    tags:     ['Decor tematic', 'Tort personalizat', 'Animator copii'],
-    gradient: 'from-[#D4AF37]/10 via-transparent to-transparent',
+    tags:        ['Decor tematic', 'Tort personalizat', 'Animator copii'],
+    gradient:    'from-[#D4AF37]/10 via-transparent to-transparent',
   },
   {
-    emoji:    '🎓',
-    title:    'Majorate',
-    subtitle: '18 ani — o seară de neuitat',
-    href:     '/majorate',
+    Icon:        IconCrown,
+    title:       'Majorate',
+    subtitle:    '18 ani — o seară de neuitat',
+    href:        '/majorate',
     description: 'O petrecere de majorat trebuie să fie spectaculoasă. Lumini de scenă, pistă de dans, sunet premium și o atmosferă de club de lux.',
-    tags:     ['DJ profesionist', 'Photobox', 'Bar open'],
-    gradient: 'from-[#B8960C]/10 via-transparent to-transparent',
+    tags:        ['DJ profesionist', 'Photobox', 'Bar open'],
+    gradient:    'from-[#B8960C]/10 via-transparent to-transparent',
   },
   {
-    emoji:    '🎂',
-    title:    'Zile de Naștere',
-    subtitle: 'Sărbătorire premium',
-    href:     '/zile-nastere',
+    Icon:        IconCake,
+    title:       'Zile de Naștere',
+    subtitle:    'Sărbătorire premium',
+    href:        '/zile-nastere',
     description: 'De la petreceri intime la aniversări grandioase — organizăm fiecare detaliu pentru ca ziua ta să fie exact cum ți-ai dorit.',
-    tags:     ['Decoruri tematice', 'Meniuri personalizate', 'Surprize speciale'],
-    gradient: 'from-[#C9A84C]/10 via-transparent to-transparent',
+    tags:        ['Decoruri tematice', 'Meniuri personalizate', 'Surprize speciale'],
+    gradient:    'from-[#C9A84C]/10 via-transparent to-transparent',
   },
   {
-    emoji:    '🏢',
-    title:    'Corporate',
-    subtitle: 'Profesionalism de elită',
-    href:     '/corporate',
+    Icon:        IconPillar,
+    title:       'Corporate',
+    subtitle:    'Profesionalism de elită',
+    href:        '/corporate',
     description: 'Conferințe, team-building-uri, gale de premiere sau cine de afaceri. Spațiu echipat complet pentru orice nevoie corporativă.',
-    tags:     ['Proiector HD', 'Catering business', 'WiFi dedicat'],
-    gradient: 'from-[#D4AF37]/10 via-transparent to-transparent',
+    tags:        ['Proiector HD', 'Catering business', 'WiFi dedicat'],
+    gradient:    'from-[#D4AF37]/10 via-transparent to-transparent',
   },
   {
-    emoji:    '✨',
-    title:    'Evenimente Private',
-    subtitle: 'Orice ocazie specială',
-    href:     '/contact',
-    description: 'Aveți o ocazie unică în minte? Fie că este un logodna, o reunire de familie sau orice altceva, noi organizăm cu același rafinament.',
-    tags:     ['Concept personalizat', 'Flexibilitate totală', 'Consultanță inclusă'],
-    gradient: 'from-[#B8960C]/10 via-transparent to-transparent',
+    Icon:        IconDiamond,
+    title:       'Evenimente Private',
+    subtitle:    'Orice ocazie specială',
+    href:        '/contact',
+    description: 'Aveți o ocazie unică în minte? Fie că este o logodnă, o reunire de familie sau orice altceva, noi organizăm cu același rafinament.',
+    tags:        ['Concept personalizat', 'Flexibilitate totală', 'Consultanță inclusă'],
+    gradient:    'from-[#B8960C]/10 via-transparent to-transparent',
   },
 ];
 
@@ -84,10 +102,9 @@ export default function EventTypes() {
                 <article
                   className={`card-luxury h-full flex flex-col p-7 bg-gradient-to-br ${event.gradient}`}
                 >
-                  <div className="mb-4">
-                    <span style={{ fontSize: '2rem' }} role="img" aria-label={event.title}>
-                      {event.emoji}
-                    </span>
+                  {/* Custom luxury icon */}
+                  <div className="mb-5 w-12 h-12 border border-gold-600/25 flex items-center justify-center group-hover:border-gold-600/60 transition-colors duration-400">
+                    <event.Icon size={22} color="#C9A84C" strokeWidth={1.3} />
                   </div>
 
                   <p className="label-gold text-[0.6rem] mb-1">{event.subtitle}</p>

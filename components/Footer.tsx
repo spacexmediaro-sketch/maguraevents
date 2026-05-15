@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Instagram, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { IconTikTok } from './Icons';
 import { siteConfig } from '@/lib/metadata';
 
 const eventLinks = [
@@ -21,11 +23,11 @@ const siteLinks = [
 ];
 
 const legalLinks = [
-  { label: 'Termeni și condiții',       href: '/termeni' },
+  { label: 'Termeni și condiții',        href: '/termeni' },
   { label: 'Politică confidențialitate', href: '/confidentialitate' },
   { label: 'Politică cookies',           href: '/cookies' },
-  { label: 'GDPR',                       href: '/gdpr' },
-  { label: 'Soluționare litigii',        href: '/litigii' },
+  { label: 'GDPR',                        href: '/gdpr' },
+  { label: 'Soluționare litigii',         href: '/litigii' },
 ];
 
 export default function Footer() {
@@ -33,29 +35,43 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-gold-600/10" style={{ background: '#050505' }}>
-      {/* Main footer */}
       <div className="container-luxury py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="block mb-6" aria-label="Măgura Events — Pagina principală">
-              <span
-                className="font-serif font-light text-gold-gradient block"
-                style={{ fontSize: '1.6rem', letterSpacing: '0.35em' }}
-              >
-                MĂGURA
-              </span>
-              <span className="font-sans text-[0.55rem] tracking-[0.5em] uppercase text-cream-600">
-                EVENTS
-              </span>
+              {/* Real logo */}
+              <div className="flex items-center gap-3">
+                <div className="relative w-14 h-14 flex-shrink-0">
+                  <Image
+                    src="/logo.png"
+                    alt="Măgura Events logo"
+                    fill
+                    className="object-contain"
+                    sizes="56px"
+                  />
+                </div>
+                <div>
+                  <span
+                    className="font-serif font-light text-gold-gradient block"
+                    style={{ fontSize: '1.3rem', letterSpacing: '0.3em' }}
+                  >
+                    MĂGURA
+                  </span>
+                  <span className="font-sans text-[0.5rem] tracking-[0.5em] uppercase text-cream-600">
+                    EVENTS
+                  </span>
+                </div>
+              </div>
             </Link>
 
             <p className="font-sans text-cream-600 text-xs mb-6" style={{ lineHeight: 1.8 }}>
               Saloane premium pentru nunți, botezuri, majorate și evenimente corporate în județul Buzău. Rafinament, eleganță și organizare impecabilă.
             </p>
 
-            {/* Social media */}
-            <div className="flex gap-4 mb-6">
+            {/* Social media — Facebook + Instagram + TikTok */}
+            <div className="flex gap-3 mb-6">
               <a
                 href={siteConfig.facebook}
                 target="_blank"
@@ -66,7 +82,7 @@ export default function Footer() {
                 <Facebook size={14} />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/magura_events"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 border border-gold-600/20 flex items-center justify-center text-cream-500 hover:text-gold-600 hover:border-gold-600/50 transition-all duration-300"
@@ -74,39 +90,46 @@ export default function Footer() {
               >
                 <Instagram size={14} />
               </a>
+              <a
+                href="https://www.tiktok.com/@magura_events"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 border border-gold-600/20 flex items-center justify-center text-cream-500 hover:text-gold-600 hover:border-gold-600/50 transition-all duration-300"
+                aria-label="Măgura Events pe TikTok"
+              >
+                <IconTikTok size={14} color="currentColor" />
+              </a>
             </div>
 
-            {/* Contact info */}
+            {/* Contact */}
             <div className="space-y-3">
-              <a
-                href="tel:+40XXXXXXXXX"
-                className="flex items-center gap-3 group"
-              >
+              <a href="tel:+40XXXXXXXXX" className="flex items-center gap-3 group">
                 <Phone size={12} className="text-gold-600/60 group-hover:text-gold-600 transition-colors" />
                 <span className="font-sans text-xs text-cream-500 group-hover:text-cream-300 transition-colors">
                   +40 XXX XXX XXX
                 </span>
               </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-3 group"
-              >
+              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 group">
                 <Mail size={12} className="text-gold-600/60 group-hover:text-gold-600 transition-colors" />
                 <span className="font-sans text-xs text-cream-500 group-hover:text-cream-300 transition-colors">
                   {siteConfig.email}
                 </span>
               </a>
-              <div className="flex items-start gap-3">
-                <MapPin size={12} className="text-gold-600/60 mt-0.5 flex-shrink-0" />
-                <address className="font-sans text-xs text-cream-500 not-italic" style={{ lineHeight: 1.6 }}>
-                  Sat Măgura,<br />
-                  Județul Buzău, România
+              <a
+                href="https://maps.google.com/maps?q=Magura+Events+Buzau"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group"
+              >
+                <MapPin size={12} className="text-gold-600/60 group-hover:text-gold-600 transition-colors mt-0.5 flex-shrink-0" />
+                <address className="font-sans text-xs text-cream-500 not-italic group-hover:text-cream-300 transition-colors" style={{ lineHeight: 1.6 }}>
+                  Sat Măgura,<br />Județul Buzău, România
                 </address>
-              </div>
+              </a>
             </div>
           </div>
 
-          {/* Events column */}
+          {/* Events */}
           <div>
             <h3 className="font-sans text-xs font-medium tracking-widest uppercase text-gold-600 mb-6">
               Evenimente
@@ -126,7 +149,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Site links column */}
+          {/* Navigation */}
           <div>
             <h3 className="font-sans text-xs font-medium tracking-widest uppercase text-gold-600 mb-6">
               Navigare
@@ -146,7 +169,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal + Company column */}
+          {/* Legal + Company */}
           <div>
             <h3 className="font-sans text-xs font-medium tracking-widest uppercase text-gold-600 mb-6">
               Legal
@@ -182,16 +205,12 @@ export default function Footer() {
                   className="font-sans text-xs text-cream-500 hover:text-cream-200 transition-colors duration-300 flex items-center gap-2 group"
                 >
                   <ExternalLink size={10} className="text-gold-600/30 group-hover:text-gold-600/60 transition-colors" />
-                  SOL — Soluționare litigii online
+                  SOL — Soluționare online
                 </a>
               </li>
             </ul>
 
-            {/* Company details */}
-            <div
-              className="border border-gold-600/10 p-4"
-              style={{ background: 'rgba(201,168,76,0.02)' }}
-            >
+            <div className="border border-gold-600/10 p-4" style={{ background: 'rgba(201,168,76,0.02)' }}>
               <p className="font-sans text-[0.6rem] text-cream-700" style={{ lineHeight: 1.8 }}>
                 <strong className="text-cream-500">AGRO & FISHING MAGURA SRL</strong><br />
                 CUI: 29032418<br />
@@ -210,9 +229,14 @@ export default function Footer() {
           <p className="font-sans text-xs text-cream-700 text-center sm:text-left">
             © {year} Măgura Events — AGRO & FISHING MAGURA SRL. Toate drepturile rezervate.
           </p>
-          <p className="font-sans text-xs text-cream-800">
-            Design premium pentru un brand de excepție.
-          </p>
+          <div className="flex items-center gap-4">
+            <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-cream-700 hover:text-gold-600 transition-colors">
+              <Facebook size={14} />
+            </a>
+            <a href="https://www.tiktok.com/@magura_events" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-cream-700 hover:text-gold-600 transition-colors">
+              <IconTikTok size={14} color="currentColor" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,31 +1,42 @@
 'use client';
 
 import Link from 'next/link';
-import { UtensilsCrossed, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
+import { IconChampagne, IconDove, IconCrown, IconPillar, IconDecor, IconFork } from './Icons';
+import type { ComponentType } from 'react';
+import type { IconProps } from './Icons';
 
-const meniuri = [
+const meniuri: {
+  Icon:        ComponentType<IconProps>;
+  title:       string;
+  subtitle:    string;
+  href:        string;
+  courses:     string[];
+  description: string;
+  highlight:   boolean;
+}[] = [
   {
-    title:    'Meniu Nuntă',
-    subtitle: 'Experiență gastronomică completă',
-    href:     '/meniuri#nunta',
-    icon:     '🥂',
+    Icon:      IconChampagne,
+    title:     'Meniu Nuntă',
+    subtitle:  'Experiență gastronomică completă',
+    href:      '/meniuri#nunta',
     courses: [
       'Aperitive și platouri premium',
       'Supă și preparate calde',
       'Fel principal — carne și pește',
       'Salate rafinate',
-      'Tort nuptial personalizat',
+      'Tort nupțial personalizat',
       'Desert și cofetărie selectă',
     ],
     description: 'Meniu complet de nuntă conceput de chef-ul nostru, cu ingrediente proaspete și preparate pentru a impresiona cei mai exigenți invitați.',
     highlight: true,
   },
   {
-    title:    'Meniu Botez',
-    subtitle: 'Rafinament pentru o zi specială',
-    href:     '/meniuri#botez',
-    icon:     '🍼',
+    Icon:      IconDove,
+    title:     'Meniu Botez',
+    subtitle:  'Rafinament pentru o zi specială',
+    href:      '/meniuri#botez',
     courses: [
       'Aperitive delicate',
       'Ciorbe tradiționale și creme',
@@ -38,26 +49,26 @@ const meniuri = [
     highlight: false,
   },
   {
-    title:    'Meniu Majorat',
-    subtitle: 'Savoare pentru o seară legendară',
-    href:     '/meniuri#majorat',
-    icon:     '🎉',
+    Icon:      IconCrown,
+    title:     'Meniu Majorat',
+    subtitle:  'Savoare pentru o seară legendară',
+    href:      '/meniuri#majorat',
     courses: [
-      'Finger food & canapes',
+      'Finger food & canapele',
       'Bufet cald variat',
       'Grătar și specialități',
       'Salate creative',
       'Tort aniversar spectaculos',
       'Candy bar și dulciuri',
     ],
-    description: 'Meniu energic și savuros pentru petrecerile de majorat, cu opțiuni variate care satisfac toți invitații, de la aperitive la desert.',
+    description: 'Meniu energic și savuros pentru petrecerile de majorat, cu opțiuni variate care satisfac toți invitații.',
     highlight: false,
   },
   {
-    title:    'Meniu Corporate',
-    subtitle: 'Profesionalism în fiecare farfurie',
-    href:     '/meniuri#corporate',
-    icon:     '🏢',
+    Icon:      IconPillar,
+    title:     'Meniu Corporate',
+    subtitle:  'Profesionalism în fiecare farfurie',
+    href:      '/meniuri#corporate',
     courses: [
       'Welcome coffee & croissante',
       'Bufet business select',
@@ -92,9 +103,7 @@ export default function MenuSection() {
             <StaggerItem key={meniu.title}>
               <article
                 className={`card-luxury flex flex-col h-full p-6 ${
-                  meniu.highlight
-                    ? 'border-gold-600/40'
-                    : 'border-gold-600/15'
+                  meniu.highlight ? 'border-gold-600/40' : 'border-gold-600/15'
                 }`}
               >
                 {meniu.highlight && (
@@ -105,10 +114,9 @@ export default function MenuSection() {
                   </div>
                 )}
 
-                <div className="mb-4">
-                  <span style={{ fontSize: '1.8rem' }} role="img" aria-label={meniu.title}>
-                    {meniu.icon}
-                  </span>
+                {/* Custom icon */}
+                <div className="mb-5 w-11 h-11 border border-gold-600/25 flex items-center justify-center">
+                  <meniu.Icon size={20} color="#C9A84C" strokeWidth={1.3} />
                 </div>
 
                 <h3 className="font-serif text-xl font-light text-cream-100 mb-1">{meniu.title}</h3>
@@ -121,7 +129,7 @@ export default function MenuSection() {
                 <ul className="space-y-2 mb-6 flex-1">
                   {meniu.courses.map((course) => (
                     <li key={course} className="flex items-start gap-2">
-                      <UtensilsCrossed size={10} className="mt-1 flex-shrink-0 text-gold-600/50" />
+                      <IconFork size={10} color="#C9A84C" strokeWidth={1.5} className="mt-1 flex-shrink-0 opacity-60" />
                       <span className="font-sans text-xs text-cream-500">{course}</span>
                     </li>
                   ))}

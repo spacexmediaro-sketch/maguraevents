@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
+import { IconDove } from '@/components/Icons';
 
 export const metadata: Metadata = {
   title: 'Botezuri — Salon Premium pentru Botezul Copilului Tău | Măgura Events',
   description:
-    'Organizăm botezuri elegante în saloanele premium Măgura Events din Buzău. Decor tematic, meniu botez rafinat, tort personalizat și animator pentru copii. Contactează-ne pentru o ofertă personalizată.',
+    'Organizăm botezuri elegante în saloanele premium Măgura Events din Buzău. Decor tematic, meniu botez rafinat, tort personalizat și animator pentru copii.',
   keywords: ['botez Buzău', 'salon botez', 'organizare botez', 'meniu botez', 'botez premium'],
   alternates: { canonical: 'https://magura-events.ro/botezuri' },
 };
@@ -22,7 +23,11 @@ export default function BotezuriPage() {
       >
         <div className="container-luxury text-center">
           <AnimatedSection>
-            <p style={{ fontSize: '2.5rem' }} className="mb-4" role="img" aria-label="Botez">🍼</p>
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 border border-gold-600/30 flex items-center justify-center">
+                <IconDove size={30} color="#C9A84C" strokeWidth={1.2} />
+              </div>
+            </div>
             <p className="label-gold mb-4">✦ Primul pas în lume ✦</p>
             <h1 className="heading-xl text-cream-200 mb-6">
               Botezuri{' '}
@@ -40,12 +45,12 @@ export default function BotezuriPage() {
         <div className="container-luxury max-w-4xl">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {[
-              { title: 'Decor tematic personalizat',  desc: 'Alegem împreună tema, culorile și stilul decorului — de la floral delicat la tematic cu personaje.' },
-              { title: 'Meniu botez complet',          desc: 'Preparate rafinate create de chef-ul nostru, inclusiv tort de botez personalizat.' },
-              { title: 'Animator pentru copii',        desc: 'Menținăm copiii fericiți cu activități interactive și programe speciale adaptate vârstei.' },
-              { title: 'Coordonator dedicat',          desc: 'Un coordonator de eveniment se ocupă de toate detaliile în ziua botezului.' },
+              { title: 'Decor tematic personalizat',     desc: 'Alegem împreună tema, culorile și stilul decorului — de la floral delicat la tematic cu personaje.' },
+              { title: 'Meniu botez complet',             desc: 'Preparate rafinate create de chef-ul nostru, inclusiv tort de botez personalizat.' },
+              { title: 'Animator pentru copii',           desc: 'Menținăm copiii fericiți cu activități interactive și programe speciale adaptate vârstei.' },
+              { title: 'Coordonator dedicat',             desc: 'Un coordonator de eveniment se ocupă de toate detaliile în ziua botezului.' },
               { title: 'Spații pentru părinți și copii', desc: 'Amenajăm spații special pentru schimbarea și odihna micuților.' },
-              { title: 'Fotografie și video',           desc: 'Colaborăm cu fotografi și cameramani profesioniști pentru amintiri impecabile.' },
+              { title: 'Fotografie și video',             desc: 'Colaborăm cu fotografi și cameramani profesioniști pentru amintiri impecabile.' },
             ].map((item) => (
               <AnimatedSection key={item.title}>
                 <div className="card-luxury p-6">
