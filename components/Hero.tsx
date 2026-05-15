@@ -6,6 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
+
+
 // Rotăm între 3 imagini reale în hero
 const heroImages = [
   {
@@ -71,43 +73,49 @@ export default function Hero() {
             <div className="absolute rounded-full opacity-15 blur-[120px]" style={{ width: '50vw', height: '50vw', background: 'radial-gradient(circle, #C9A84C 0%, transparent 70%)', top: '10%', left: '20%', animation: 'float 4s ease-in-out infinite' }} />
             <div className="absolute rounded-full opacity-08 blur-[100px]" style={{ width: '40vw', height: '40vw', background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)', bottom: '15%', right: '15%', animation: 'float 5s ease-in-out infinite reverse' }} />
 
+            {/* Logo real centrat */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, scale: 0.88, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center"
             >
-              <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.4, duration: 0.8 }} className="flex items-center gap-3 mb-6">
-                <div className="w-20 h-px" style={{ background: 'linear-gradient(90deg, transparent, #C9A84C)' }} />
-                <span style={{ color: '#C9A84C', fontSize: '1rem' }}>✦</span>
-                <div className="w-20 h-px" style={{ background: 'linear-gradient(90deg, #C9A84C, transparent)' }} />
-              </motion.div>
-
-              <motion.span
-                initial={{ opacity: 0, letterSpacing: '0.5em' }}
-                animate={{ opacity: 1, letterSpacing: '0.5em' }}
-                transition={{ delay: 0.3, duration: 1.5 }}
-                className="font-serif font-light text-gold-gradient block"
-                style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)' }}
-              >
-                MĂGURA
-              </motion.span>
-              <motion.span
+              {/* Logo image */}
+              <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.7 }}
-                transition={{ delay: 0.8, duration: 1 }}
-                className="font-sans font-light text-cream-500 mt-2"
-                style={{ fontSize: '0.7rem', letterSpacing: '0.7em' }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 1.2 }}
+                className="relative mb-8"
+                style={{ width: 'clamp(180px, 28vw, 280px)', height: 'clamp(180px, 28vw, 280px)' }}
               >
-                EVENTS
-              </motion.span>
-
-              <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.6, duration: 0.8 }} className="flex items-center gap-3 mt-6">
-                <div className="w-20 h-px" style={{ background: 'linear-gradient(90deg, transparent, #C9A84C)' }} />
-                <span style={{ color: '#C9A84C', fontSize: '0.6rem' }}>◆</span>
-                <div className="w-20 h-px" style={{ background: 'linear-gradient(90deg, #C9A84C, transparent)' }} />
+                <Image
+                  src="/logo.png"
+                  alt="Măgura Events"
+                  fill
+                  className="object-contain drop-shadow-[0_0_40px_rgba(201,168,76,0.4)]"
+                  sizes="280px"
+                  priority
+                />
               </motion.div>
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} transition={{ delay: 1.2, duration: 0.8 }} className="font-sans text-cream-600 text-xs tracking-[0.4em] uppercase mt-8">
+
+              {/* Linie decorativă */}
+              <motion.div
+                initial={{ scaleX: 0, opacity: 0 }}
+                animate={{ scaleX: 1, opacity: 1 }}
+                transition={{ delay: 0.9, duration: 0.8 }}
+                className="flex items-center gap-4"
+              >
+                <div className="w-16 h-px" style={{ background: 'linear-gradient(90deg, transparent, #C9A84C)' }} />
+                <span style={{ color: '#C9A84C', fontSize: '0.5rem' }}>◆</span>
+                <div className="w-16 h-px" style={{ background: 'linear-gradient(90deg, #C9A84C, transparent)' }} />
+              </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+                className="font-sans text-cream-600 text-xs tracking-[0.45em] uppercase mt-5"
+              >
                 Momente care rămân
               </motion.p>
             </motion.div>

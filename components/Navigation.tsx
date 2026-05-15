@@ -74,26 +74,26 @@ export default function Navigation() {
       >
         <div className="container-luxury flex items-center justify-between">
 
-          {/* Logo — real image */}
-          <Link href="/" className="flex items-center gap-3 group" aria-label="Măgura Events — Pagina principală">
-            <div className="relative w-11 h-11 flex-shrink-0">
+          {/* Logo — logo real cu text inclus */}
+          <Link href="/" className="flex items-center group" aria-label="Măgura Events — Pagina principală">
+            <div className="relative h-14 w-auto" style={{ aspectRatio: '1/1', width: '56px' }}>
               <Image
                 src="/logo.png"
-                alt="Măgura Events"
+                alt="Măgura Events — Saloane premium pentru evenimente"
                 fill
-                className="object-contain"
-                sizes="44px"
+                className="object-contain drop-shadow-sm transition-opacity duration-300 group-hover:opacity-90"
+                sizes="56px"
                 priority
               />
             </div>
-            <div className="flex flex-col leading-none">
+            <div className="flex flex-col leading-none ml-2">
               <span
                 className="font-serif font-light text-gold-gradient block"
-                style={{ fontSize: '1.15rem', letterSpacing: '0.35em' }}
+                style={{ fontSize: '1.1rem', letterSpacing: '0.3em' }}
               >
                 MĂGURA
               </span>
-              <span className="font-sans text-[0.5rem] tracking-[0.5em] uppercase text-cream-500">
+              <span className="font-sans text-[0.48rem] tracking-[0.5em] uppercase text-cream-500">
                 EVENTS
               </span>
             </div>
@@ -182,10 +182,13 @@ export default function Navigation() {
           >
             <div className="flex items-center justify-between px-6 py-5 border-b border-gold-600/10">
               <div className="flex items-center gap-3">
-                <div className="relative w-9 h-9">
-                  <Image src="/logo.png" alt="Logo" fill className="object-contain" sizes="36px" />
+                <div className="relative w-10 h-10 flex-shrink-0">
+                  <Image src="/logo.png" alt="Măgura Events logo" fill className="object-contain" sizes="40px" />
                 </div>
-                <span className="font-serif text-base tracking-widest text-gold-600">MĂGURA EVENTS</span>
+                <div className="flex flex-col">
+                  <span className="font-serif text-sm tracking-widest text-gold-600">MĂGURA</span>
+                  <span className="font-sans text-[0.45rem] tracking-[0.4em] uppercase text-cream-600">EVENTS</span>
+                </div>
               </div>
               <button
                 onClick={() => setMobileOpen(false)}

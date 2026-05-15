@@ -41,25 +41,21 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="block mb-6" aria-label="Măgura Events — Pagina principală">
-              {/* Real logo */}
               <div className="flex items-center gap-3">
-                <div className="relative w-14 h-14 flex-shrink-0">
+                <div className="relative w-16 h-16 flex-shrink-0">
                   <Image
                     src="/logo.png"
                     alt="Măgura Events logo"
                     fill
                     className="object-contain"
-                    sizes="56px"
+                    sizes="64px"
                   />
                 </div>
                 <div>
-                  <span
-                    className="font-serif font-light text-gold-gradient block"
-                    style={{ fontSize: '1.3rem', letterSpacing: '0.3em' }}
-                  >
+                  <span className="font-serif font-light text-gold-gradient block" style={{ fontSize: '1.2rem', letterSpacing: '0.3em' }}>
                     MĂGURA
                   </span>
-                  <span className="font-sans text-[0.5rem] tracking-[0.5em] uppercase text-cream-600">
+                  <span className="font-sans text-[0.48rem] tracking-[0.5em] uppercase text-cream-600">
                     EVENTS
                   </span>
                 </div>
